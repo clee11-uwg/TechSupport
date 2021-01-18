@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechSupport.View
@@ -21,7 +14,7 @@ namespace TechSupport.View
         {
             if (txtBxUsername.Text == "Jane" && maskedTxtBxPassword.Text == "test1234")
             {
-                // Directs user to MainForm       
+                // Directs user to new MainForm       
                 this.Hide();
                 MainForm mainForm = new MainForm(txtBxUsername.Text);
                 mainForm.ShowDialog();
