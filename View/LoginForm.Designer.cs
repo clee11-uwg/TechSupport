@@ -64,6 +64,7 @@
             this.txtBxUsername.Name = "txtBxUsername";
             this.txtBxUsername.Size = new System.Drawing.Size(100, 20);
             this.txtBxUsername.TabIndex = 1;
+            this.txtBxUsername.TextChanged += new System.EventHandler(this.TextFieldChange);
             // 
             // maskedTxtBxPassword
             // 
@@ -72,6 +73,7 @@
             this.maskedTxtBxPassword.PasswordChar = '*';
             this.maskedTxtBxPassword.Size = new System.Drawing.Size(100, 20);
             this.maskedTxtBxPassword.TabIndex = 2;
+            this.maskedTxtBxPassword.TextChanged += new System.EventHandler(this.TextFieldChange);
             // 
             // btnLogin
             // 

@@ -22,5 +22,13 @@ namespace TechSupport.View
             InitializeComponent();
             lblUsernameMF.Text = username;
         }
+
+        private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm myLoginForm = new LoginForm();
+            myLoginForm.ShowDialog();
+            this.Close();
+        }
     }
 }
