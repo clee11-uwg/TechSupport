@@ -21,7 +21,7 @@ namespace TechSupport.View
         {
             if (txtBxUsername.Text == 'Jane' && maskedTxtBxPassword.Text == 'test1234')
             {
-                // Directs user to ManForm
+                // Directs user to MainForm
             }
         }
     }
