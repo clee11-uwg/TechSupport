@@ -69,6 +69,7 @@
             // 
             this.maskedTxtBxPassword.Location = new System.Drawing.Point(137, 47);
             this.maskedTxtBxPassword.Name = "maskedTxtBxPassword";
+            this.maskedTxtBxPassword.PasswordChar = '*';
             this.maskedTxtBxPassword.Size = new System.Drawing.Size(100, 20);
             this.maskedTxtBxPassword.TabIndex = 2;
             // 
