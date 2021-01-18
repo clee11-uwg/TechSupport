@@ -33,6 +33,7 @@
             this.txtBxUsername = new System.Windows.Forms.TextBox();
             this.maskedTxtBxPassword = new System.Windows.Forms.MaskedTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lblPasswordErrorMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -82,11 +83,21 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
+            // lblPasswordErrorMsg
+            // 
+            this.lblPasswordErrorMsg.AutoSize = true;
+            this.lblPasswordErrorMsg.Location = new System.Drawing.Point(161, 130);
+            this.lblPasswordErrorMsg.Name = "lblPasswordErrorMsg";
+            this.lblPasswordErrorMsg.Size = new System.Drawing.Size(0, 13);
+            this.lblPasswordErrorMsg.TabIndex = 5;
+            this.lblPasswordErrorMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPasswordErrorMsg);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.maskedTxtBxPassword);
             this.Controls.Add(this.txtBxUsername);
@@ -106,5 +117,6 @@
         private System.Windows.Forms.TextBox txtBxUsername;
         private System.Windows.Forms.MaskedTextBox maskedTxtBxPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblPasswordErrorMsg;
     }
 }
