@@ -16,5 +16,13 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtBxUsername.Text == 'Jane' && maskedTxtBxPassword.Text == 'test1234')
+            {
+                // Directs user to ManForm
+            }
+        }
     }
 }
