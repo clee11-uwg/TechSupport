@@ -19,9 +19,17 @@ namespace TechSupport.View
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (txtBxUsername.Text == 'Jane' && maskedTxtBxPassword.Text == 'test1234')
+            if (txtBxUsername.Text == "Jane" && maskedTxtBxPassword.Text == "test1234")
             {
                 // Directs user to MainForm
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
+            }
+            else
+            {
+               lblPasswordErrorMsg.Text = "Invalid username/password";
+                lblPasswordErrorMsg.ForeColor = System.Drawing.Color.Red;
             }
         }
     }
