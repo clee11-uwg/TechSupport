@@ -16,5 +16,11 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        public MainForm(String username)
+        {
+            InitializeComponent();
+            lblUsernameMF.Text = username;
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace TechSupport.View
             {
                 // Directs user to MainForm
                 this.Hide();
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(txtBxUsername.Text);
                 mainForm.ShowDialog();
             }
             else
