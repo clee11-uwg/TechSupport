@@ -56,5 +56,10 @@ namespace TechSupport.View
             this.incidentsDataGridView.DataSource = null;
             this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();
         }
+
+        private void SearchIncidentButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
