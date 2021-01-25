@@ -73,7 +73,7 @@
             // 
             this.searchIncidentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchIncidentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchIncidentButton.Location = new System.Drawing.Point(237, 115);
+            this.searchIncidentButton.Location = new System.Drawing.Point(324, 115);
             this.searchIncidentButton.Name = "searchIncidentButton";
             this.searchIncidentButton.Size = new System.Drawing.Size(144, 36);
             this.searchIncidentButton.TabIndex = 3;
@@ -88,7 +88,7 @@
             this.incidentsDataGridView.Location = new System.Drawing.Point(85, 199);
             this.incidentsDataGridView.Name = "incidentsDataGridView";
             this.incidentsDataGridView.ReadOnly = true;
-            this.incidentsDataGridView.Size = new System.Drawing.Size(296, 150);
+            this.incidentsDataGridView.Size = new System.Drawing.Size(383, 183);
             this.incidentsDataGridView.TabIndex = 4;
             // 
             // MainForm

@@ -39,6 +39,11 @@ namespace TechSupport.View
         {
             AddIncidentDialog incidentDialog = new AddIncidentDialog();
             DialogResult incidentResult = incidentDialog.ShowDialog();
+
+            if (incidentResult == DialogResult.OK)
+            {
+                this.RefreshDataGrid();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
