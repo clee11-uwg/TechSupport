@@ -3,8 +3,14 @@ using System.Windows.Forms;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Class that displays and handles events for a login form
+    /// </summary>
     public partial class LoginForm : Form
     {
+        /// <summary>
+        /// Zero parameter constructor for LoginForm
+        /// </summary>
         public LoginForm()
         {
             InitializeComponent();
