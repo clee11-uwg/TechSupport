@@ -33,7 +33,8 @@ namespace TechSupport.View
 
         private void AddIncidentButton_Click(object sender, EventArgs e)
         {
-
+            AddIncidentDialog incidentDialog = new AddIncidentDialog();
+            DialogResult incidentResult = incidentDialog.ShowDialog();
         }
     }
 }
