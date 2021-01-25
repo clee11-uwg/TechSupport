@@ -30,6 +30,10 @@
         {
             this.lblUsernameMF = new System.Windows.Forms.Label();
             this.lnkLblLogout = new System.Windows.Forms.LinkLabel();
+            this.addIncidentButton = new System.Windows.Forms.Button();
+            this.searchIncidentButton = new System.Windows.Forms.Button();
+            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsernameMF
@@ -53,11 +57,48 @@
             this.lnkLblLogout.Text = "Logout";
             this.lnkLblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLblLogout_LinkClicked);
             // 
+            // addIncidentButton
+            // 
+            this.addIncidentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addIncidentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addIncidentButton.Location = new System.Drawing.Point(85, 115);
+            this.addIncidentButton.Name = "addIncidentButton";
+            this.addIncidentButton.Size = new System.Drawing.Size(135, 36);
+            this.addIncidentButton.TabIndex = 2;
+            this.addIncidentButton.Text = "Add Incident";
+            this.addIncidentButton.UseVisualStyleBackColor = true;
+            this.addIncidentButton.Click += new System.EventHandler(this.AddIncidentButton_Click);
+            // 
+            // searchIncidentButton
+            // 
+            this.searchIncidentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchIncidentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchIncidentButton.Location = new System.Drawing.Point(237, 115);
+            this.searchIncidentButton.Name = "searchIncidentButton";
+            this.searchIncidentButton.Size = new System.Drawing.Size(144, 36);
+            this.searchIncidentButton.TabIndex = 3;
+            this.searchIncidentButton.Text = "Search Incident";
+            this.searchIncidentButton.UseVisualStyleBackColor = true;
+            // 
+            // incidentsDataGridView
+            // 
+            this.incidentsDataGridView.AllowUserToAddRows = false;
+            this.incidentsDataGridView.AllowUserToDeleteRows = false;
+            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentsDataGridView.Location = new System.Drawing.Point(85, 199);
+            this.incidentsDataGridView.Name = "incidentsDataGridView";
+            this.incidentsDataGridView.ReadOnly = true;
+            this.incidentsDataGridView.Size = new System.Drawing.Size(296, 150);
+            this.incidentsDataGridView.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.incidentsDataGridView);
+            this.Controls.Add(this.searchIncidentButton);
+            this.Controls.Add(this.addIncidentButton);
             this.Controls.Add(this.lnkLblLogout);
             this.Controls.Add(this.lblUsernameMF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -66,6 +107,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,5 +117,8 @@
 
         private System.Windows.Forms.Label lblUsernameMF;
         private System.Windows.Forms.LinkLabel lnkLblLogout;
+        private System.Windows.Forms.Button addIncidentButton;
+        private System.Windows.Forms.Button searchIncidentButton;
+        private System.Windows.Forms.DataGridView incidentsDataGridView;
     }
 }

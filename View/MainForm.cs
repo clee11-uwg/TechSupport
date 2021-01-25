@@ -30,5 +30,10 @@ namespace TechSupport.View
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void AddIncidentButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
