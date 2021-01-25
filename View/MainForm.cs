@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TechSupport.Controller;
 
 namespace TechSupport.View
 {
@@ -8,12 +9,14 @@ namespace TechSupport.View
     /// </summary>
     public partial class MainForm : Form
     {
+        private readonly IncidentController incidentController;
         /// <summary>
         /// Zero parameter constructor for MainForm
         /// </summary>
         public MainForm()
         {
             InitializeComponent();
+            this.incidentController = new IncidentController();
         }
 
         /// <summary>
@@ -23,6 +26,7 @@ namespace TechSupport.View
         public MainForm(String username)
         {
             InitializeComponent();
+            this.incidentController = new IncidentController();
             lblUsernameMF.Text = username;
         }
 
@@ -35,6 +39,17 @@ namespace TechSupport.View
         {
             AddIncidentDialog incidentDialog = new AddIncidentDialog();
             DialogResult incidentResult = incidentDialog.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.RefreshDataGrid();
+        }
+
+        private void RefreshDataGrid()
+        {
+            this.incidentsDataGridView.DataSource = null;
+            this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();
         }
     }
 }
