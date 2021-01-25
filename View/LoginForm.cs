@@ -14,11 +14,8 @@ namespace TechSupport.View
         {
             if (txtBxUsername.Text == "Jane" && maskedTxtBxPassword.Text == "test1234")
             {
-                // Directs user to new MainForm       
-                this.Hide();
-                MainForm mainForm = new MainForm(txtBxUsername.Text);
-                mainForm.ShowDialog();
-                this.Close();
+                MainForm mainForm = new MainForm(txtBxUsername.Text);                
+                DialogResult mainFormResult = mainForm.ShowDialog();
             }
             else
             {

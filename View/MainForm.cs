@@ -18,11 +18,7 @@ namespace TechSupport.View
 
         private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Directs user to new Login Form
-            this.Hide();
-            LoginForm myLoginForm = new LoginForm();
-            myLoginForm.ShowDialog();
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
