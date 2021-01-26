@@ -46,7 +46,7 @@
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLabel.Location = new System.Drawing.Point(3, 0);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(152, 62);
+            this.searchLabel.Size = new System.Drawing.Size(151, 62);
             this.searchLabel.TabIndex = 0;
             this.searchLabel.Text = "CustomerID:";
             this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,9 +68,9 @@
             // customerIDSearchTextBox
             // 
             this.customerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerIDSearchTextBox.Location = new System.Drawing.Point(161, 21);
+            this.customerIDSearchTextBox.Location = new System.Drawing.Point(160, 21);
             this.customerIDSearchTextBox.Name = "customerIDSearchTextBox";
-            this.customerIDSearchTextBox.Size = new System.Drawing.Size(192, 20);
+            this.customerIDSearchTextBox.Size = new System.Drawing.Size(193, 20);
             this.customerIDSearchTextBox.TabIndex = 1;
             // 
             // searchResultsDataGridView
@@ -79,7 +79,7 @@
             this.searchResultsDataGridView.Location = new System.Drawing.Point(125, 168);
             this.searchResultsDataGridView.Name = "searchResultsDataGridView";
             this.searchResultsDataGridView.Size = new System.Drawing.Size(349, 176);
-            this.searchResultsDataGridView.TabIndex = 2;
+            this.searchResultsDataGridView.TabIndex = 3;
             // 
             // searchButton
             // 
@@ -88,9 +88,10 @@
             this.searchButton.Location = new System.Drawing.Point(228, 127);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(139, 35);
-            this.searchButton.TabIndex = 3;
+            this.searchButton.TabIndex = 2;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchIncidentDialog
             // 

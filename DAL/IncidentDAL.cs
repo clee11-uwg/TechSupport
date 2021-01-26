@@ -30,13 +30,23 @@ namespace TechSupport.DAL
             _incidents.Add(incident);
         }
 
-        public void Source(int customerID)
+        public List<Incident> Search(int customerID)
         {
             if (customerID <= 0)
             {
                 throw new ArgumentException("CustomerID must be greater than 0 and not null");
             }
-            
+
+            List<Incident> filteredList = new List<Incident>();
+            foreach (var incident in _incidents)
+            {
+                if (customerID == incident.CustomerID)
+                {
+                    filteredList.Add(incident);
+                }
+            }
+            return filteredList;
+
         }
     }
 }
