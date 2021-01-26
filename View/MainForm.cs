@@ -4,12 +4,13 @@ using TechSupport.Controller;
 
 namespace TechSupport.View
 {
-    /// <summary>
-    /// Class that creates and implements events for the main form
-    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Class that creates and implements events for the main form
+        /// </summary>
         private readonly IncidentController incidentController;
+
         /// <summary>
         /// Zero parameter constructor for MainForm
         /// </summary>

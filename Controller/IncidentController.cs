@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechSupport.DAL;
 using TechSupport.Model;
 
 namespace TechSupport.Controller
 {
+    /// <summary>
+    /// Incident Controller class that acts as the mediator between the DAL and the View
+    /// </summary>
     public class IncidentController
     {
         /// <summary>
@@ -41,6 +41,11 @@ namespace TechSupport.Controller
             this.incidentSource.Add(incident);
         }
 
+        /// <summary>
+        /// Returns new filtered list based on customerId entered
+        /// </summary>
+        /// <param name="customerID">CustomerID to filter the list by</param>
+        /// <returns>Returns new fitlered list based on customerID</returns>
         public List<Incident> Search(int customerID)
         {
             if (customerID <= 0)
