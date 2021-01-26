@@ -33,6 +33,7 @@
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.searchResultsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchButton = new System.Windows.Forms.Button();
+            this.backToMainFormButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +86,7 @@
             // 
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(228, 127);
+            this.searchButton.Location = new System.Drawing.Point(332, 127);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(139, 35);
             this.searchButton.TabIndex = 2;
@@ -93,11 +94,24 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // backToMainFormButton
+            // 
+            this.backToMainFormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToMainFormButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToMainFormButton.Location = new System.Drawing.Point(125, 127);
+            this.backToMainFormButton.Name = "backToMainFormButton";
+            this.backToMainFormButton.Size = new System.Drawing.Size(139, 35);
+            this.backToMainFormButton.TabIndex = 4;
+            this.backToMainFormButton.Text = "Back to Main Form";
+            this.backToMainFormButton.UseVisualStyleBackColor = true;
+            this.backToMainFormButton.Click += new System.EventHandler(this.BackToMainFormButton_Click);
+            // 
             // SearchIncidentDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 444);
+            this.Controls.Add(this.backToMainFormButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchResultsDataGridView);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -121,5 +135,6 @@
         private System.Windows.Forms.TextBox customerIDSearchTextBox;
         private System.Windows.Forms.DataGridView searchResultsDataGridView;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button backToMainFormButton;
     }
 }

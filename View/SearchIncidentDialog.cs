@@ -26,5 +26,10 @@ namespace TechSupport.View
             this.searchResultsDataGridView.DataSource = null;
             this.searchResultsDataGridView.DataSource = this.incidentController.Search(customerID);
         }
+
+        private void BackToMainFormButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }
