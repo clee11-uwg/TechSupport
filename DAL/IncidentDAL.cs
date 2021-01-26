@@ -29,5 +29,14 @@ namespace TechSupport.DAL
 
             _incidents.Add(incident);
         }
+
+        public void Source(int customerID)
+        {
+            if (customerID <= 0)
+            {
+                throw new ArgumentException("CustomerID must be greater than 0 and not null");
+            }
+            
+        }
     }
 }
