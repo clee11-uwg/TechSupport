@@ -31,7 +31,6 @@
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
-            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchResultsDataGridView = new System.Windows.Forms.DataGridView();
@@ -39,13 +38,14 @@
             this.searchLabel = new System.Windows.Forms.Label();
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
+            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.searchTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dashboardTabControl
@@ -83,18 +83,6 @@
             this.incidentsTabPage.TabIndex = 1;
             this.incidentsTabPage.Text = "All Incidents";
             this.incidentsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // incidentsDataGridView
-            // 
-            this.incidentsDataGridView.AllowUserToAddRows = false;
-            this.incidentsDataGridView.AllowUserToDeleteRows = false;
-            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.incidentsDataGridView.Location = new System.Drawing.Point(92, 35);
-            this.incidentsDataGridView.Name = "incidentsDataGridView";
-            this.incidentsDataGridView.ReadOnly = true;
-            this.incidentsDataGridView.RowHeadersWidth = 51;
-            this.incidentsDataGridView.Size = new System.Drawing.Size(599, 242);
-            this.incidentsDataGridView.TabIndex = 5;
             // 
             // searchTabPage
             // 
@@ -173,6 +161,18 @@
             this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
             this.addIncidentUserControl1.TabIndex = 0;
             // 
+            // incidentsDataGridView
+            // 
+            this.incidentsDataGridView.AllowUserToAddRows = false;
+            this.incidentsDataGridView.AllowUserToDeleteRows = false;
+            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentsDataGridView.Location = new System.Drawing.Point(92, 35);
+            this.incidentsDataGridView.Name = "incidentsDataGridView";
+            this.incidentsDataGridView.ReadOnly = true;
+            this.incidentsDataGridView.RowHeadersWidth = 51;
+            this.incidentsDataGridView.Size = new System.Drawing.Size(599, 242);
+            this.incidentsDataGridView.TabIndex = 5;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,11 +185,11 @@
             this.dashboardTabControl.ResumeLayout(false);
             this.addIncidentTabPage.ResumeLayout(false);
             this.incidentsTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.searchTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +199,6 @@
         private System.Windows.Forms.TabControl dashboardTabControl;
         private System.Windows.Forms.TabPage addIncidentTabPage;
         private System.Windows.Forms.TabPage incidentsTabPage;
-        private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage searchTabPage;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.DataGridView searchResultsDataGridView;
@@ -207,5 +206,6 @@
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox customerIDSearchTextBox;
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
+        private System.Windows.Forms.DataGridView incidentsDataGridView;
     }
 }
