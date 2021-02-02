@@ -28,32 +28,6 @@ namespace TechSupport.View
             this.incidentController = new IncidentController();
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var title = this.titleTextBox.Text;
-                var description = this.descriptionTextBox.Text;
-                var customerID = int.Parse(this.customerIDTextBox.Text);
-
-                this.incidentController.Add(new Incident(title, description, customerID));
-                this.messageLabel.Text = "Movie is added";
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show("One of the inputs appear to be off \n" + exc.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            this.titleTextBox.Text = "";
-            this.descriptionTextBox.Text = "";
-            this.customerIDTextBox.Text = "";
-            this.messageLabel.Text = "";
-        }
-
         private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dashboardTabControl.SelectedTab.Text == "All Incidents")
