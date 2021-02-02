@@ -20,8 +20,9 @@ namespace TechSupport.View
         {
             if (txtBxUsername.Text == "Jane" && maskedTxtBxPassword.Text == "test1234")
             {
-                MainForm mainForm = new MainForm(txtBxUsername.Text);                
-                DialogResult mainFormResult = mainForm.ShowDialog();
+                //MainForm mainForm = new MainForm(txtBxUsername.Text);                
+                MainDashboard mainDashboard = new MainDashboard();
+                DialogResult mainFormResult = mainDashboard.ShowDialog();
             }
             else
             {
