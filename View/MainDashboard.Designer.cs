@@ -39,6 +39,7 @@
             this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
             this.dashboardTabControl.Controls.Add(this.tabPage2);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 97);
             this.dashboardTabControl.Name = "dashboardTabControl";
             this.dashboardTabControl.SelectedIndex = 0;
@@ -47,10 +48,10 @@
             // 
             // addIncidentTabPage
             // 
-            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 22);
+            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 38);
             this.addIncidentTabPage.Name = "addIncidentTabPage";
             this.addIncidentTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addIncidentTabPage.Size = new System.Drawing.Size(792, 327);
+            this.addIncidentTabPage.Size = new System.Drawing.Size(792, 311);
             this.addIncidentTabPage.TabIndex = 0;
             this.addIncidentTabPage.Text = "Add Incident";
             this.addIncidentTabPage.UseVisualStyleBackColor = true;
@@ -72,6 +73,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dashboardTabControl);
             this.Name = "MainDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainDashboard";
             this.dashboardTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
