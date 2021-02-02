@@ -91,13 +91,13 @@
             this.tableLayoutPanel1.Controls.Add(this.customerIDTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.descriptionTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.titleLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.customerIDLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.titleTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.addButton, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.clearButton, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.messageLabel, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(180, 5);
+            this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(177, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
