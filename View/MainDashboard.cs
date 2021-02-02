@@ -53,5 +53,14 @@ namespace TechSupport.View
             this.customerIDTextBox.Text = "";
             this.messageLabel.Text = "";
         }
+
+        private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dashboardTabControl.SelectedTab.Text == "All Incidents")
+            {
+                this.incidentsDataGridView.DataSource = null;
+                this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();
+            }
+        }
     }
 }

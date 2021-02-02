@@ -31,7 +31,6 @@
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.clearButton = new System.Windows.Forms.Button();
             this.customerIDTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -39,17 +38,23 @@
             this.customerIDLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.clearButton = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
+            this.incidentsTabPage = new System.Windows.Forms.TabPage();
+            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.searchTabPage = new System.Windows.Forms.TabPage();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.incidentsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dashboardTabControl
             // 
             this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
-            this.dashboardTabControl.Controls.Add(this.tabPage2);
+            this.dashboardTabControl.Controls.Add(this.incidentsTabPage);
+            this.dashboardTabControl.Controls.Add(this.searchTabPage);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 97);
@@ -57,6 +62,7 @@
             this.dashboardTabControl.SelectedIndex = 0;
             this.dashboardTabControl.Size = new System.Drawing.Size(800, 353);
             this.dashboardTabControl.TabIndex = 0;
+            this.dashboardTabControl.SelectedIndexChanged += new System.EventHandler(this.DashboardTabControl_SelectedIndexChanged);
             // 
             // addIncidentTabPage
             // 
@@ -93,18 +99,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(433, 301);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(274, 227);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(100, 71);
-            this.clearButton.TabIndex = 7;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // customerIDTextBox
             // 
@@ -184,15 +178,17 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // tabPage2
+            // clearButton
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 311);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearButton.Location = new System.Drawing.Point(274, 227);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(100, 71);
+            this.clearButton.TabIndex = 7;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // messageLabel
             // 
@@ -201,6 +197,38 @@
             this.messageLabel.Name = "messageLabel";
             this.messageLabel.Size = new System.Drawing.Size(0, 29);
             this.messageLabel.TabIndex = 8;
+            // 
+            // incidentsTabPage
+            // 
+            this.incidentsTabPage.Controls.Add(this.incidentsDataGridView);
+            this.incidentsTabPage.Location = new System.Drawing.Point(4, 38);
+            this.incidentsTabPage.Name = "incidentsTabPage";
+            this.incidentsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.incidentsTabPage.Size = new System.Drawing.Size(792, 311);
+            this.incidentsTabPage.TabIndex = 1;
+            this.incidentsTabPage.Text = "All Incidents";
+            this.incidentsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // incidentsDataGridView
+            // 
+            this.incidentsDataGridView.AllowUserToAddRows = false;
+            this.incidentsDataGridView.AllowUserToDeleteRows = false;
+            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentsDataGridView.Location = new System.Drawing.Point(92, 35);
+            this.incidentsDataGridView.Name = "incidentsDataGridView";
+            this.incidentsDataGridView.ReadOnly = true;
+            this.incidentsDataGridView.RowHeadersWidth = 51;
+            this.incidentsDataGridView.Size = new System.Drawing.Size(599, 242);
+            this.incidentsDataGridView.TabIndex = 5;
+            // 
+            // searchTabPage
+            // 
+            this.searchTabPage.Location = new System.Drawing.Point(4, 38);
+            this.searchTabPage.Name = "searchTabPage";
+            this.searchTabPage.Size = new System.Drawing.Size(792, 311);
+            this.searchTabPage.TabIndex = 2;
+            this.searchTabPage.Text = "Search Incidents";
+            this.searchTabPage.UseVisualStyleBackColor = true;
             // 
             // MainDashboard
             // 
@@ -215,6 +243,8 @@
             this.addIncidentTabPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.incidentsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,7 +253,7 @@
 
         private System.Windows.Forms.TabControl dashboardTabControl;
         private System.Windows.Forms.TabPage addIncidentTabPage;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage incidentsTabPage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.TextBox customerIDTextBox;
@@ -234,5 +264,7 @@
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.DataGridView incidentsDataGridView;
+        private System.Windows.Forms.TabPage searchTabPage;
     }
 }
