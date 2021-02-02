@@ -51,10 +51,10 @@
     <Compile Include="Model\Incident.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Controls\AddIncidentUserControl.cs">
+    <Compile Include="UserControls\AddIncidentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\AddIncidentUserControl.Designer.cs">
+    <Compile Include="UserControls\AddIncidentUserControl.Designer.cs">
       <DependentUpon>AddIncidentUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddIncidentDialog.cs">
@@ -96,7 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Controls\AddIncidentUserControl.resx">
+    <EmbeddedResource Include="UserControls\AddIncidentUserControl.resx">
       <DependentUpon>AddIncidentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddIncidentDialog.resx">

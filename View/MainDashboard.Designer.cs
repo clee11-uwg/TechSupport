@@ -170,7 +170,7 @@
             this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
             this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 371);
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
             this.addIncidentUserControl1.TabIndex = 0;
             // 
             // MainDashboard
