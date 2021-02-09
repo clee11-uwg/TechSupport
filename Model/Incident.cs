@@ -6,9 +6,15 @@ namespace TechSupport.Model
         /// <summary>
         /// Incident class to create an Incident object
         /// </summary>
-        public string Title { get; }
-        public string Description { get; }
-        public int CustomerID { get; }
+        /// 
+
+        private string title;
+        private string description;
+        private int customerID;
+
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int CustomerID { get; set; }
 
         /// <summary>
         /// 3 parameter constructor for Incident class
