@@ -30,22 +30,23 @@
         {
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
+            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
+            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchResultsDataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchLabel = new System.Windows.Forms.Label();
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
-            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
-            this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.searchTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dashboardTabControl
@@ -53,6 +54,7 @@
             this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
             this.dashboardTabControl.Controls.Add(this.incidentsTabPage);
             this.dashboardTabControl.Controls.Add(this.searchTabPage);
+            this.dashboardTabControl.Controls.Add(this.displayOpenIncidentsTabPage);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 84);
@@ -65,33 +67,53 @@
             // addIncidentTabPage
             // 
             this.addIncidentTabPage.Controls.Add(this.addIncidentUserControl1);
-            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 38);
+            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 34);
             this.addIncidentTabPage.Name = "addIncidentTabPage";
             this.addIncidentTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addIncidentTabPage.Size = new System.Drawing.Size(802, 378);
+            this.addIncidentTabPage.Size = new System.Drawing.Size(802, 382);
             this.addIncidentTabPage.TabIndex = 0;
             this.addIncidentTabPage.Text = "Add Incident";
             this.addIncidentTabPage.UseVisualStyleBackColor = true;
             // 
+            // addIncidentUserControl1
+            // 
+            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
+            this.addIncidentUserControl1.TabIndex = 0;
+            // 
             // incidentsTabPage
             // 
             this.incidentsTabPage.Controls.Add(this.incidentsDataGridView);
-            this.incidentsTabPage.Location = new System.Drawing.Point(4, 38);
+            this.incidentsTabPage.Location = new System.Drawing.Point(4, 34);
             this.incidentsTabPage.Name = "incidentsTabPage";
             this.incidentsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.incidentsTabPage.Size = new System.Drawing.Size(802, 378);
+            this.incidentsTabPage.Size = new System.Drawing.Size(802, 382);
             this.incidentsTabPage.TabIndex = 1;
             this.incidentsTabPage.Text = "All Incidents";
             this.incidentsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // incidentsDataGridView
+            // 
+            this.incidentsDataGridView.AllowUserToAddRows = false;
+            this.incidentsDataGridView.AllowUserToDeleteRows = false;
+            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentsDataGridView.Location = new System.Drawing.Point(92, 35);
+            this.incidentsDataGridView.Name = "incidentsDataGridView";
+            this.incidentsDataGridView.ReadOnly = true;
+            this.incidentsDataGridView.RowHeadersWidth = 51;
+            this.incidentsDataGridView.Size = new System.Drawing.Size(599, 242);
+            this.incidentsDataGridView.TabIndex = 5;
             // 
             // searchTabPage
             // 
             this.searchTabPage.Controls.Add(this.searchButton);
             this.searchTabPage.Controls.Add(this.searchResultsDataGridView);
             this.searchTabPage.Controls.Add(this.tableLayoutPanel2);
-            this.searchTabPage.Location = new System.Drawing.Point(4, 38);
+            this.searchTabPage.Location = new System.Drawing.Point(4, 34);
             this.searchTabPage.Name = "searchTabPage";
-            this.searchTabPage.Size = new System.Drawing.Size(802, 378);
+            this.searchTabPage.Size = new System.Drawing.Size(802, 382);
             this.searchTabPage.TabIndex = 2;
             this.searchTabPage.Text = "Search Incidents";
             this.searchTabPage.UseVisualStyleBackColor = true;
@@ -148,30 +170,19 @@
             // customerIDSearchTextBox
             // 
             this.customerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerIDSearchTextBox.Location = new System.Drawing.Point(160, 13);
+            this.customerIDSearchTextBox.Location = new System.Drawing.Point(160, 16);
             this.customerIDSearchTextBox.Name = "customerIDSearchTextBox";
-            this.customerIDSearchTextBox.Size = new System.Drawing.Size(193, 36);
+            this.customerIDSearchTextBox.Size = new System.Drawing.Size(193, 30);
             this.customerIDSearchTextBox.TabIndex = 1;
             // 
-            // addIncidentUserControl1
+            // displayOpenIncidentsTabPage
             // 
-            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
-            this.addIncidentUserControl1.TabIndex = 0;
-            // 
-            // incidentsDataGridView
-            // 
-            this.incidentsDataGridView.AllowUserToAddRows = false;
-            this.incidentsDataGridView.AllowUserToDeleteRows = false;
-            this.incidentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.incidentsDataGridView.Location = new System.Drawing.Point(92, 35);
-            this.incidentsDataGridView.Name = "incidentsDataGridView";
-            this.incidentsDataGridView.ReadOnly = true;
-            this.incidentsDataGridView.RowHeadersWidth = 51;
-            this.incidentsDataGridView.Size = new System.Drawing.Size(599, 242);
-            this.incidentsDataGridView.TabIndex = 5;
+            this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.displayOpenIncidentsTabPage.Name = "displayOpenIncidentsTabPage";
+            this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(802, 382);
+            this.displayOpenIncidentsTabPage.TabIndex = 3;
+            this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
+            this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
             // 
             // MainDashboard
             // 
@@ -185,11 +196,11 @@
             this.dashboardTabControl.ResumeLayout(false);
             this.addIncidentTabPage.ResumeLayout(false);
             this.incidentsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.searchTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incidentsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +218,6 @@
         private System.Windows.Forms.TextBox customerIDSearchTextBox;
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private System.Windows.Forms.DataGridView incidentsDataGridView;
+        private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
     }
 }
