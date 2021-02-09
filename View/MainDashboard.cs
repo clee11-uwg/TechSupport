@@ -35,6 +35,10 @@ namespace TechSupport.View
                 this.incidentsDataGridView.DataSource = null;
                 this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();
             }
+            if (dashboardTabControl.SelectedTab.Text == "Display Open Incidents")
+            {
+                List<Incident> incidentList = this.incidentController.GetOpenIncidents();
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

@@ -29,6 +29,15 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Returns a list of open incidents from the DAL that retrieves the data from the database
+        /// </summary>
+        /// <returns></returns>
+        public List<Incident> GetOpenIncidents()
+        {
+            return IncidentsDBDAL.GetIncidents();
+        }
+
+        /// <summary>
         /// Adds an incident to the incidents list through the DAL
         /// </summary>
         /// <param name="incident"></param>

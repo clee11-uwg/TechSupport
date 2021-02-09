@@ -40,7 +40,7 @@
             this.searchLabel = new System.Windows.Forms.Label();
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.incidentListView = new System.Windows.Forms.ListView();
             this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -183,7 +183,7 @@
             // 
             // displayOpenIncidentsTabPage
             // 
-            this.displayOpenIncidentsTabPage.Controls.Add(this.listView1);
+            this.displayOpenIncidentsTabPage.Controls.Add(this.incidentListView);
             this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 34);
             this.displayOpenIncidentsTabPage.Name = "displayOpenIncidentsTabPage";
             this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(802, 382);
@@ -191,20 +191,20 @@
             this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
             this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // incidentListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.productCodeHeader,
             this.dateOpenedHeader,
             this.titleHeader,
             this.descriptionHeader});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(58, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(688, 325);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.incidentListView.HideSelection = false;
+            this.incidentListView.Location = new System.Drawing.Point(58, 28);
+            this.incidentListView.Name = "incidentListView";
+            this.incidentListView.Size = new System.Drawing.Size(688, 325);
+            this.incidentListView.TabIndex = 0;
+            this.incidentListView.UseCompatibleStateImageBehavior = false;
+            this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
             // productCodeHeader
             // 
@@ -262,7 +262,7 @@
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView incidentListView;
         private System.Windows.Forms.ColumnHeader productCodeHeader;
         private System.Windows.Forms.ColumnHeader dateOpenedHeader;
         private System.Windows.Forms.ColumnHeader titleHeader;
