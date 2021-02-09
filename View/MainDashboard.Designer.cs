@@ -40,6 +40,11 @@
             this.searchLabel = new System.Windows.Forms.Label();
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
@@ -47,6 +52,7 @@
             this.searchTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.displayOpenIncidentsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboardTabControl
@@ -177,12 +183,48 @@
             // 
             // displayOpenIncidentsTabPage
             // 
+            this.displayOpenIncidentsTabPage.Controls.Add(this.listView1);
             this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 34);
             this.displayOpenIncidentsTabPage.Name = "displayOpenIncidentsTabPage";
             this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(802, 382);
             this.displayOpenIncidentsTabPage.TabIndex = 3;
             this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
             this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.productCodeHeader,
+            this.dateOpenedHeader,
+            this.titleHeader,
+            this.descriptionHeader});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(58, 28);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(688, 325);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // productCodeHeader
+            // 
+            this.productCodeHeader.Text = "Product Code";
+            this.productCodeHeader.Width = 144;
+            // 
+            // dateOpenedHeader
+            // 
+            this.dateOpenedHeader.Text = "Date Opened";
+            this.dateOpenedHeader.Width = 152;
+            // 
+            // titleHeader
+            // 
+            this.titleHeader.Text = "Title";
+            this.titleHeader.Width = 194;
+            // 
+            // descriptionHeader
+            // 
+            this.descriptionHeader.Text = "Description";
+            this.descriptionHeader.Width = 193;
             // 
             // MainDashboard
             // 
@@ -201,6 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.displayOpenIncidentsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,5 +262,10 @@
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader productCodeHeader;
+        private System.Windows.Forms.ColumnHeader dateOpenedHeader;
+        private System.Windows.Forms.ColumnHeader titleHeader;
+        private System.Windows.Forms.ColumnHeader descriptionHeader;
     }
 }
