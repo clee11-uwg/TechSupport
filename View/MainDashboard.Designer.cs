@@ -193,9 +193,9 @@
             this.descriptionHeader,
             this.dateOpenedHeader});
             this.incidentListView.HideSelection = false;
-            this.incidentListView.Location = new System.Drawing.Point(8, 24);
+            this.incidentListView.Location = new System.Drawing.Point(3, 22);
             this.incidentListView.Name = "incidentListView";
-            this.incidentListView.Size = new System.Drawing.Size(786, 325);
+            this.incidentListView.Size = new System.Drawing.Size(796, 325);
             this.incidentListView.TabIndex = 0;
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
