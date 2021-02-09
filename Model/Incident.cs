@@ -17,6 +17,11 @@ namespace TechSupport.Model
         public int CustomerID { get; set; }
 
         /// <summary>
+        /// Incident 0-parameter constructor
+        /// </summary>
+        public Incident() { }
+
+        /// <summary>
         /// 3 parameter constructor for Incident class
         /// </summary>
         /// <param name="title"></param>
