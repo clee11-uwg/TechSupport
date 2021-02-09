@@ -30,7 +30,6 @@
         {
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
-            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
             this.incidentsDataGridView = new System.Windows.Forms.DataGridView();
             this.searchTabPage = new System.Windows.Forms.TabPage();
@@ -41,9 +40,10 @@
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.incidentListView = new System.Windows.Forms.ListView();
-            this.customerIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
+            this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
@@ -79,14 +79,6 @@
             this.addIncidentTabPage.TabIndex = 0;
             this.addIncidentTabPage.Text = "Add Incident";
             this.addIncidentTabPage.UseVisualStyleBackColor = true;
-            // 
-            // addIncidentUserControl1
-            // 
-            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
-            this.addIncidentUserControl1.TabIndex = 0;
             // 
             // incidentsTabPage
             // 
@@ -193,31 +185,39 @@
             // incidentListView
             // 
             this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.customerIDHeader,
+            this.incidentIDHeader,
             this.titleHeader,
             this.descriptionHeader});
             this.incidentListView.HideSelection = false;
-            this.incidentListView.Location = new System.Drawing.Point(58, 28);
+            this.incidentListView.Location = new System.Drawing.Point(47, 24);
             this.incidentListView.Name = "incidentListView";
             this.incidentListView.Size = new System.Drawing.Size(688, 325);
             this.incidentListView.TabIndex = 0;
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
-            // customerIDHeader
-            // 
-            this.customerIDHeader.Text = "Customer ID";
-            this.customerIDHeader.Width = 152;
-            // 
             // titleHeader
             // 
             this.titleHeader.Text = "Title";
-            this.titleHeader.Width = 194;
+            this.titleHeader.Width = 150;
             // 
             // descriptionHeader
             // 
             this.descriptionHeader.Text = "Description";
-            this.descriptionHeader.Width = 333;
+            this.descriptionHeader.Width = 364;
+            // 
+            // addIncidentUserControl1
+            // 
+            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
+            this.addIncidentUserControl1.TabIndex = 0;
+            // 
+            // incidentIDHeader
+            // 
+            this.incidentIDHeader.Text = "Incident ID";
+            this.incidentIDHeader.Width = 108;
             // 
             // MainDashboard
             // 
@@ -256,8 +256,8 @@
         private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
         private System.Windows.Forms.ListView incidentListView;
-        private System.Windows.Forms.ColumnHeader customerIDHeader;
         private System.Windows.Forms.ColumnHeader titleHeader;
         private System.Windows.Forms.ColumnHeader descriptionHeader;
+        private System.Windows.Forms.ColumnHeader incidentIDHeader;
     }
 }

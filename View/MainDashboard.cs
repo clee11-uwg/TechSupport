@@ -39,15 +39,30 @@ namespace TechSupport.View
             {
                 List<Incident> incidentList = this.incidentController.GetOpenIncidents();
 
-                if (incidentList.Count > 0)
+                try
                 {
-                    Incident incident;
-                    for (int i = 0; i < incidentList.Count; i++)
+                    if (incidentList.Count > 0)
                     {
-                        incident = incidentList[i];
-
+                        Incident incident;
+                        for (int i = 0; i < incidentList.Count; i++)
+                        {
+                            incident = incidentList[i];
+                            incidentListView.Items.Add(incident.IncidentID.ToString());
+                            incidentListView.Items[i].SubItems.Add(incident.Title);
+                            incidentListView.Items[i].SubItems.Add(incident.Description);
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("There are no open incidents", "No open incidents");
+                        this.Close();
+                    }
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    this.Close();
                 }
+                
             }
         }
 

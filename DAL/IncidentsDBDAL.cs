@@ -17,7 +17,7 @@ namespace TechSupport.DAL
         {
             List<Incident> incidentList = new List<Incident>();
 
-            string selectStatement = "SELECT * FROM Incidents";
+            string selectStatement = "SELECT * FROM Incidents WHERE DateClosed IS NULL;";
             
             using (SqlConnection connection = IncidentsDBConnection.GetConnection())
             {
@@ -29,14 +29,14 @@ namespace TechSupport.DAL
                     {
                         int incidentTitle = reader.GetOrdinal("Title");
                         int incidentDescription = reader.GetOrdinal("Description");
-                        int incidentCustomerID = reader.GetOrdinal("CustomerID");
+                        int incidentIncidentID = reader.GetOrdinal("IncidentID");
 
                         while (reader.Read())
                         {
                             Incident incident = new Incident();
                             incident.Title = reader.GetString(incidentTitle);
                             incident.Description = reader.GetString(incidentDescription);
-                            incident.CustomerID = reader.GetInt32(incidentCustomerID);
+                            incident.IncidentID = reader.GetInt32(incidentIncidentID);
                             incidentList.Add(incident);
                         }
                     }
