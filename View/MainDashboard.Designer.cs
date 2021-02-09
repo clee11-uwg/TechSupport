@@ -44,6 +44,8 @@
             this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
@@ -186,25 +188,29 @@
             // 
             this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.incidentIDHeader,
+            this.productCodeHeader,
             this.titleHeader,
-            this.descriptionHeader});
+            this.descriptionHeader,
+            this.dateOpenedHeader});
             this.incidentListView.HideSelection = false;
-            this.incidentListView.Location = new System.Drawing.Point(47, 24);
+            this.incidentListView.Location = new System.Drawing.Point(8, 24);
             this.incidentListView.Name = "incidentListView";
-            this.incidentListView.Size = new System.Drawing.Size(688, 325);
+            this.incidentListView.Size = new System.Drawing.Size(786, 325);
             this.incidentListView.TabIndex = 0;
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
             // titleHeader
             // 
+            this.titleHeader.DisplayIndex = 3;
             this.titleHeader.Text = "Title";
-            this.titleHeader.Width = 150;
+            this.titleHeader.Width = 111;
             // 
             // descriptionHeader
             // 
+            this.descriptionHeader.DisplayIndex = 4;
             this.descriptionHeader.Text = "Description";
-            this.descriptionHeader.Width = 364;
+            this.descriptionHeader.Width = 278;
             // 
             // addIncidentUserControl1
             // 
@@ -218,6 +224,17 @@
             // 
             this.incidentIDHeader.Text = "Incident ID";
             this.incidentIDHeader.Width = 108;
+            // 
+            // productCodeHeader
+            // 
+            this.productCodeHeader.Text = "Product Code";
+            this.productCodeHeader.Width = 144;
+            // 
+            // dateOpenedHeader
+            // 
+            this.dateOpenedHeader.DisplayIndex = 2;
+            this.dateOpenedHeader.Text = "Date Opened";
+            this.dateOpenedHeader.Width = 138;
             // 
             // MainDashboard
             // 
@@ -259,5 +276,7 @@
         private System.Windows.Forms.ColumnHeader titleHeader;
         private System.Windows.Forms.ColumnHeader descriptionHeader;
         private System.Windows.Forms.ColumnHeader incidentIDHeader;
+        private System.Windows.Forms.ColumnHeader productCodeHeader;
+        private System.Windows.Forms.ColumnHeader dateOpenedHeader;
     }
 }

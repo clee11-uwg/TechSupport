@@ -30,6 +30,8 @@ namespace TechSupport.DAL
                         int incidentTitle = reader.GetOrdinal("Title");
                         int incidentDescription = reader.GetOrdinal("Description");
                         int incidentIncidentID = reader.GetOrdinal("IncidentID");
+                        int incidentProductCode = reader.GetOrdinal("ProductCode");
+                        int incidentDateOpened = reader.GetOrdinal("DateOpened");
 
                         while (reader.Read())
                         {
@@ -37,6 +39,8 @@ namespace TechSupport.DAL
                             incident.Title = reader.GetString(incidentTitle);
                             incident.Description = reader.GetString(incidentDescription);
                             incident.IncidentID = reader.GetInt32(incidentIncidentID);
+                            incident.ProductCode = reader.GetString(incidentProductCode);
+                            incident.DateOpened = reader.GetDateTime(incidentDateOpened);
                             incidentList.Add(incident);
                         }
                     }

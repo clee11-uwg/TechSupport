@@ -12,11 +12,15 @@ namespace TechSupport.Model
         private string description;
         private int customerID;
         private int incidentID;
+        private string productCode;
+        private DateTime dateOpened;
 
         public string Title { get; set; }
         public string Description { get; set; }
         public int CustomerID { get; set; }
         public int IncidentID { get; set; }
+        public string ProductCode { get; set; }
+        public DateTime DateOpened { get; set; }
 
         /// <summary>
         /// Incident 0-parameter constructor

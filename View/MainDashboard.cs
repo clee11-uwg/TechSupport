@@ -48,6 +48,8 @@ namespace TechSupport.View
                         {
                             incident = incidentList[i];
                             incidentListView.Items.Add(incident.IncidentID.ToString());
+                            incidentListView.Items[i].SubItems.Add(incident.ProductCode.ToString());
+                            incidentListView.Items[i].SubItems.Add(incident.DateOpened.ToString("MM-DD-yyyy"));
                             incidentListView.Items[i].SubItems.Add(incident.Title);
                             incidentListView.Items[i].SubItems.Add(incident.Description);
                         }
