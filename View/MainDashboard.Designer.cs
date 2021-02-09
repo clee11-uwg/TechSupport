@@ -41,8 +41,7 @@
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.incidentListView = new System.Windows.Forms.ListView();
-            this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.customerIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dashboardTabControl.SuspendLayout();
@@ -194,8 +193,7 @@
             // incidentListView
             // 
             this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.productCodeHeader,
-            this.dateOpenedHeader,
+            this.customerIDHeader,
             this.titleHeader,
             this.descriptionHeader});
             this.incidentListView.HideSelection = false;
@@ -206,15 +204,10 @@
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
-            // productCodeHeader
+            // customerIDHeader
             // 
-            this.productCodeHeader.Text = "Product Code";
-            this.productCodeHeader.Width = 144;
-            // 
-            // dateOpenedHeader
-            // 
-            this.dateOpenedHeader.Text = "Date Opened";
-            this.dateOpenedHeader.Width = 152;
+            this.customerIDHeader.Text = "Customer ID";
+            this.customerIDHeader.Width = 152;
             // 
             // titleHeader
             // 
@@ -224,7 +217,7 @@
             // descriptionHeader
             // 
             this.descriptionHeader.Text = "Description";
-            this.descriptionHeader.Width = 193;
+            this.descriptionHeader.Width = 333;
             // 
             // MainDashboard
             // 
@@ -263,8 +256,7 @@
         private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
         private System.Windows.Forms.ListView incidentListView;
-        private System.Windows.Forms.ColumnHeader productCodeHeader;
-        private System.Windows.Forms.ColumnHeader dateOpenedHeader;
+        private System.Windows.Forms.ColumnHeader customerIDHeader;
         private System.Windows.Forms.ColumnHeader titleHeader;
         private System.Windows.Forms.ColumnHeader descriptionHeader;
     }

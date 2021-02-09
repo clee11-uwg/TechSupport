@@ -38,6 +38,16 @@ namespace TechSupport.View
             if (dashboardTabControl.SelectedTab.Text == "Display Open Incidents")
             {
                 List<Incident> incidentList = this.incidentController.GetOpenIncidents();
+
+                if (incidentList.Count > 0)
+                {
+                    Incident incident;
+                    for (int i = 0; i < incidentList.Count; i++)
+                    {
+                        incident = incidentList[i];
+
+                    }
+                }
             }
         }
 
