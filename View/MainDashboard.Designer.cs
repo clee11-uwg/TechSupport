@@ -40,12 +40,12 @@
             this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.incidentListView = new System.Windows.Forms.ListView();
-            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
@@ -200,6 +200,16 @@
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
+            // incidentIDHeader
+            // 
+            this.incidentIDHeader.Text = "Incident ID";
+            this.incidentIDHeader.Width = 108;
+            // 
+            // productCodeHeader
+            // 
+            this.productCodeHeader.Text = "Product Code";
+            this.productCodeHeader.Width = 144;
+            // 
             // titleHeader
             // 
             this.titleHeader.DisplayIndex = 3;
@@ -212,29 +222,20 @@
             this.descriptionHeader.Text = "Description";
             this.descriptionHeader.Width = 278;
             // 
-            // addIncidentUserControl1
-            // 
-            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(802, 378);
-            this.addIncidentUserControl1.TabIndex = 0;
-            // 
-            // incidentIDHeader
-            // 
-            this.incidentIDHeader.Text = "Incident ID";
-            this.incidentIDHeader.Width = 108;
-            // 
-            // productCodeHeader
-            // 
-            this.productCodeHeader.Text = "Product Code";
-            this.productCodeHeader.Width = 144;
-            // 
             // dateOpenedHeader
             // 
             this.dateOpenedHeader.DisplayIndex = 2;
             this.dateOpenedHeader.Text = "Date Opened";
             this.dateOpenedHeader.Width = 138;
+            // 
+            // addIncidentUserControl1
+            // 
+            this.addIncidentUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addIncidentUserControl1.Location = new System.Drawing.Point(160, 8);
+            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(461, 368);
+            this.addIncidentUserControl1.TabIndex = 0;
             // 
             // MainDashboard
             // 
@@ -269,7 +270,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox customerIDSearchTextBox;
-        private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private System.Windows.Forms.DataGridView incidentsDataGridView;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
         private System.Windows.Forms.ListView incidentListView;
@@ -278,5 +278,6 @@
         private System.Windows.Forms.ColumnHeader incidentIDHeader;
         private System.Windows.Forms.ColumnHeader productCodeHeader;
         private System.Windows.Forms.ColumnHeader dateOpenedHeader;
+        private User_Controls.AddIncidentUserControl addIncidentUserControl1;
     }
 }

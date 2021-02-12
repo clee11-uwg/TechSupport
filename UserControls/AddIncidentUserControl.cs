@@ -53,5 +53,6 @@ namespace TechSupport.User_Controls
             this.customerIDTextBox.Text = "";
             this.messageLabel.Text = "";
         }
+
     }
 }
