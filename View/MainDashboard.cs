@@ -30,12 +30,6 @@ namespace TechSupport.View
 
         private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dashboardTabControl.SelectedTab.Text == "All Incidents")
-            {
-                this.incidentsDataGridView.DataSource = null;
-                this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();
-            }
-
             // I struggled really bad with UserControls when we had to do them for the first Practice Exercise and
             // unfortunately I didn't leave myself enough time this week to learn more about them. This is why
             // the program seems a little bit incomplete and why this part wasnt in a UserControl
