@@ -43,13 +43,13 @@ namespace TechSupport.UserControls
                 else
                 {
                     MessageBox.Show("There are no open incidents", "No open incidents");
-                    //this.Close();
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
-                //this.Close();
+                this.Close();
             }
         }                
     }

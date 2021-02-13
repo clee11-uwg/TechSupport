@@ -7,10 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private User_Controls.AddIncidentUserControl addIncidentUserControl1;
-        private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
-        private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -211,5 +207,8 @@
         private System.Windows.Forms.ColumnHeader incidentIDHeader;
         private System.Windows.Forms.ColumnHeader productCodeHeader;
         private System.Windows.Forms.ColumnHeader dateOpenedHeader;
+        private User_Controls.AddIncidentUserControl addIncidentUserControl1;
+        private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
+        private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
     }
 }
