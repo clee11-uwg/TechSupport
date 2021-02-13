@@ -65,12 +65,5 @@ namespace TechSupport.View
                 
             }
         }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            int customerID = int.Parse(this.customerIDSearchTextBox.Text);
-            this.searchResultsDataGridView.DataSource = null;
-            this.searchResultsDataGridView.DataSource = this.incidentController.Search(customerID);
-        }
     }
 }

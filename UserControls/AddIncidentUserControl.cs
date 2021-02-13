@@ -37,7 +37,7 @@ namespace TechSupport.User_Controls
                 var customerID = int.Parse(this.customerIDTextBox.Text);
 
                 this.incidentController.Add(new Incident(title, description, customerID));
-                this.messageLabel.Text = "Movie is added";
+                this.messageLabel.Text = "Incident has been added";
             }
             catch (Exception exc)
             {

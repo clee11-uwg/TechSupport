@@ -11,7 +11,7 @@ namespace TechSupport.UserControls
             InitializeComponent();
             this.incidentController = new IncidentController();
             this.RefreshDataGridView();
-        }
+        }        
 
         private void RefreshDataGridView()
         {

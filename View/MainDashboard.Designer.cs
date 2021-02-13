@@ -32,11 +32,6 @@
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
             this.searchTabPage = new System.Windows.Forms.TabPage();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchResultsDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.customerIDSearchTextBox = new System.Windows.Forms.TextBox();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.incidentListView = new System.Windows.Forms.ListView();
             this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,12 +41,11 @@
             this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.all_IncidentsUserControl1 = new TechSupport.UserControls.All_IncidentsUserControl();
+            this.searchIncidentsUserControl1 = new TechSupport.UserControls.SearchIncidentsUserControl();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
             this.searchTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.displayOpenIncidentsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,72 +88,13 @@
             // 
             // searchTabPage
             // 
-            this.searchTabPage.Controls.Add(this.searchButton);
-            this.searchTabPage.Controls.Add(this.searchResultsDataGridView);
-            this.searchTabPage.Controls.Add(this.tableLayoutPanel2);
+            this.searchTabPage.Controls.Add(this.searchIncidentsUserControl1);
             this.searchTabPage.Location = new System.Drawing.Point(4, 34);
             this.searchTabPage.Name = "searchTabPage";
             this.searchTabPage.Size = new System.Drawing.Size(802, 382);
             this.searchTabPage.TabIndex = 2;
             this.searchTabPage.Text = "Search Incidents";
             this.searchTabPage.UseVisualStyleBackColor = true;
-            // 
-            // searchButton
-            // 
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(432, 81);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(139, 35);
-            this.searchButton.TabIndex = 6;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // searchResultsDataGridView
-            // 
-            this.searchResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchResultsDataGridView.Location = new System.Drawing.Point(94, 122);
-            this.searchResultsDataGridView.Name = "searchResultsDataGridView";
-            this.searchResultsDataGridView.RowHeadersWidth = 51;
-            this.searchResultsDataGridView.Size = new System.Drawing.Size(635, 239);
-            this.searchResultsDataGridView.TabIndex = 7;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.38202F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.61798F));
-            this.tableLayoutPanel2.Controls.Add(this.searchLabel, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.customerIDSearchTextBox, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(218, 12);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(356, 62);
-            this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(3, 0);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(151, 62);
-            this.searchLabel.TabIndex = 0;
-            this.searchLabel.Text = "CustomerID:";
-            this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customerIDSearchTextBox
-            // 
-            this.customerIDSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerIDSearchTextBox.Location = new System.Drawing.Point(160, 16);
-            this.customerIDSearchTextBox.Name = "customerIDSearchTextBox";
-            this.customerIDSearchTextBox.Size = new System.Drawing.Size(193, 30);
-            this.customerIDSearchTextBox.TabIndex = 1;
             // 
             // displayOpenIncidentsTabPage
             // 
@@ -227,10 +162,19 @@
             // all_IncidentsUserControl1
             // 
             this.all_IncidentsUserControl1.Location = new System.Drawing.Point(102, 38);
-            this.all_IncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.all_IncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6);
             this.all_IncidentsUserControl1.Name = "all_IncidentsUserControl1";
             this.all_IncidentsUserControl1.Size = new System.Drawing.Size(584, 315);
             this.all_IncidentsUserControl1.TabIndex = 0;
+            // 
+            // searchIncidentsUserControl1
+            // 
+            this.searchIncidentsUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.searchIncidentsUserControl1.Location = new System.Drawing.Point(11, 15);
+            this.searchIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchIncidentsUserControl1.Name = "searchIncidentsUserControl1";
+            this.searchIncidentsUserControl1.Size = new System.Drawing.Size(780, 356);
+            this.searchIncidentsUserControl1.TabIndex = 0;
             // 
             // MainDashboard
             // 
@@ -245,9 +189,6 @@
             this.addIncidentTabPage.ResumeLayout(false);
             this.incidentsTabPage.ResumeLayout(false);
             this.searchTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchResultsDataGridView)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.displayOpenIncidentsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -259,11 +200,6 @@
         private System.Windows.Forms.TabPage addIncidentTabPage;
         private System.Windows.Forms.TabPage incidentsTabPage;
         private System.Windows.Forms.TabPage searchTabPage;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.DataGridView searchResultsDataGridView;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox customerIDSearchTextBox;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
         private System.Windows.Forms.ListView incidentListView;
         private System.Windows.Forms.ColumnHeader titleHeader;
@@ -273,5 +209,6 @@
         private System.Windows.Forms.ColumnHeader dateOpenedHeader;
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
+        private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
     }
 }
