@@ -13,7 +13,7 @@ namespace TechSupport.UserControls
             this.RefreshDataGridView();
         }        
 
-        private void RefreshDataGridView()
+        public void RefreshDataGridView()
         {
             this.incidentsDataGridView.DataSource = null;
             this.incidentsDataGridView.DataSource = this.incidentController.GetIncidents();

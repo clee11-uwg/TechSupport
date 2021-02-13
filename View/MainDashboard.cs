@@ -64,6 +64,10 @@ namespace TechSupport.View
                 }
                 
             }
+            if (dashboardTabControl.SelectedTab.Text == "All Incidents")
+            {
+                all_IncidentsUserControl1.RefreshDataGridView();
+            }
         }
     }
 }
