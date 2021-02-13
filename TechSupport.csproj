@@ -65,6 +65,12 @@
     <Compile Include="UserControls\All_IncidentsUserControl.Designer.cs">
       <DependentUpon>All_IncidentsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DisplayOpenIncidentsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DisplayOpenIncidentsUserControl.Designer.cs">
+      <DependentUpon>DisplayOpenIncidentsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SearchIncidentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\All_IncidentsUserControl.resx">
       <DependentUpon>All_IncidentsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DisplayOpenIncidentsUserControl.resx">
+      <DependentUpon>DisplayOpenIncidentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SearchIncidentsUserControl.resx">
       <DependentUpon>SearchIncidentsUserControl.cs</DependentUpon>
