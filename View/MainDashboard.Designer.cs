@@ -33,15 +33,10 @@
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
-            this.incidentListView = new System.Windows.Forms.ListView();
-            this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.all_IncidentsUserControl1 = new TechSupport.UserControls.All_IncidentsUserControl();
             this.searchIncidentsUserControl1 = new TechSupport.UserControls.SearchIncidentsUserControl();
+            this.displayOpenIncidentsUserControl1 = new TechSupport.UserControls.DisplayOpenIncidentsUserControl();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
             this.incidentsTabPage.SuspendLayout();
@@ -98,57 +93,13 @@
             // 
             // displayOpenIncidentsTabPage
             // 
-            this.displayOpenIncidentsTabPage.Controls.Add(this.incidentListView);
+            this.displayOpenIncidentsTabPage.Controls.Add(this.displayOpenIncidentsUserControl1);
             this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 34);
             this.displayOpenIncidentsTabPage.Name = "displayOpenIncidentsTabPage";
             this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(802, 382);
             this.displayOpenIncidentsTabPage.TabIndex = 3;
             this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
             this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // incidentListView
-            // 
-            this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.incidentIDHeader,
-            this.productCodeHeader,
-            this.titleHeader,
-            this.descriptionHeader,
-            this.dateOpenedHeader});
-            this.incidentListView.HideSelection = false;
-            this.incidentListView.Location = new System.Drawing.Point(3, 22);
-            this.incidentListView.Name = "incidentListView";
-            this.incidentListView.Size = new System.Drawing.Size(796, 325);
-            this.incidentListView.TabIndex = 0;
-            this.incidentListView.UseCompatibleStateImageBehavior = false;
-            this.incidentListView.View = System.Windows.Forms.View.Details;
-            // 
-            // incidentIDHeader
-            // 
-            this.incidentIDHeader.Text = "Incident ID";
-            this.incidentIDHeader.Width = 108;
-            // 
-            // productCodeHeader
-            // 
-            this.productCodeHeader.Text = "Product Code";
-            this.productCodeHeader.Width = 144;
-            // 
-            // titleHeader
-            // 
-            this.titleHeader.DisplayIndex = 3;
-            this.titleHeader.Text = "Title";
-            this.titleHeader.Width = 111;
-            // 
-            // descriptionHeader
-            // 
-            this.descriptionHeader.DisplayIndex = 4;
-            this.descriptionHeader.Text = "Description";
-            this.descriptionHeader.Width = 278;
-            // 
-            // dateOpenedHeader
-            // 
-            this.dateOpenedHeader.DisplayIndex = 2;
-            this.dateOpenedHeader.Text = "Date Opened";
-            this.dateOpenedHeader.Width = 138;
             // 
             // addIncidentUserControl1
             // 
@@ -171,10 +122,18 @@
             // 
             this.searchIncidentsUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.searchIncidentsUserControl1.Location = new System.Drawing.Point(11, 15);
-            this.searchIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6);
             this.searchIncidentsUserControl1.Name = "searchIncidentsUserControl1";
             this.searchIncidentsUserControl1.Size = new System.Drawing.Size(780, 356);
             this.searchIncidentsUserControl1.TabIndex = 0;
+            // 
+            // displayOpenIncidentsUserControl1
+            // 
+            this.displayOpenIncidentsUserControl1.Location = new System.Drawing.Point(6, 6);
+            this.displayOpenIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.displayOpenIncidentsUserControl1.Name = "displayOpenIncidentsUserControl1";
+            this.displayOpenIncidentsUserControl1.Size = new System.Drawing.Size(785, 365);
+            this.displayOpenIncidentsUserControl1.TabIndex = 0;
             // 
             // MainDashboard
             // 
@@ -201,14 +160,9 @@
         private System.Windows.Forms.TabPage incidentsTabPage;
         private System.Windows.Forms.TabPage searchTabPage;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
-        private System.Windows.Forms.ListView incidentListView;
-        private System.Windows.Forms.ColumnHeader titleHeader;
-        private System.Windows.Forms.ColumnHeader descriptionHeader;
-        private System.Windows.Forms.ColumnHeader incidentIDHeader;
-        private System.Windows.Forms.ColumnHeader productCodeHeader;
-        private System.Windows.Forms.ColumnHeader dateOpenedHeader;
         private User_Controls.AddIncidentUserControl addIncidentUserControl1;
         private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
         private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
+        private UserControls.DisplayOpenIncidentsUserControl displayOpenIncidentsUserControl1;
     }
 }
