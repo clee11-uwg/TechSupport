@@ -8,13 +8,6 @@ namespace TechSupport.Model
         /// </summary>
         /// 
 
-        private string title;
-        private string description;
-        private int customerID;
-        private int incidentID;
-        private string productCode;
-        private DateTime dateOpened;
-
         public string Title { get; set; }
         public string Description { get; set; }
         public int CustomerID { get; set; }
