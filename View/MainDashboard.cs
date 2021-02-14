@@ -12,51 +12,27 @@ namespace TechSupport.View
         private readonly IncidentController incidentController;
 
         /// <summary>
-        /// 0 parameter constructor that creates a new instance of the incident controller
+        /// 1 parameter constructor that creates a new instance of the incident controller
         /// </summary>
-        public MainDashboard()
+        /// <param name="username"></param>
+        public MainDashboard(String username)
         {
             InitializeComponent();
             this.incidentController = new IncidentController();
+            usernameLabel.Text = username;
         }
 
         private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (dashboardTabControl.SelectedTab.Text == "Display Open Incidents")
-            {
-                List<Incident> incidentList = this.incidentController.GetOpenIncidents();
-
-                try
-                {
-                    if (incidentList.Count > 0)
-                    {
-                        Incident incident;
-                        for (int i = 0; i < incidentList.Count; i++)
-                        {
-                            incident = incidentList[i];
-                            incidentListView.Items.Add(incident.IncidentID.ToString());
-                            incidentListView.Items[i].SubItems.Add(incident.ProductCode.ToString());
-                            incidentListView.Items[i].SubItems.Add(incident.DateOpened.ToString("MM/dd/yyyy"));
-                            incidentListView.Items[i].SubItems.Add(incident.Title);
-                            incidentListView.Items[i].SubItems.Add(incident.Description);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("There are no open incidents", "No open incidents");
-                        this.Close();
-                    }
-                } catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                    this.Close();
-                }
-                
-            }*/
             if (dashboardTabControl.SelectedTab.Text == "All Incidents")
             {
                 this.all_IncidentsUserControl1.RefreshDataGridView();
             }
+        }
+
+        private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -33,6 +33,8 @@
             this.incidentsTabPage = new System.Windows.Forms.TabPage();
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
+            this.lnkLblLogout = new System.Windows.Forms.LinkLabel();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
             this.all_IncidentsUserControl1 = new TechSupport.UserControls.All_IncidentsUserControl();
             this.searchIncidentsUserControl1 = new TechSupport.UserControls.SearchIncidentsUserControl();
@@ -101,6 +103,27 @@
             this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
             this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
             // 
+            // lnkLblLogout
+            // 
+            this.lnkLblLogout.AutoSize = true;
+            this.lnkLblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkLblLogout.Location = new System.Drawing.Point(701, 59);
+            this.lnkLblLogout.Name = "lnkLblLogout";
+            this.lnkLblLogout.Size = new System.Drawing.Size(65, 22);
+            this.lnkLblLogout.TabIndex = 2;
+            this.lnkLblLogout.TabStop = true;
+            this.lnkLblLogout.Text = "Logout";
+            this.lnkLblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLblLogout_LinkClicked);
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(705, 23);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(0, 18);
+            this.usernameLabel.TabIndex = 3;
+            // 
             // addIncidentUserControl1
             // 
             this.addIncidentUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -130,7 +153,7 @@
             // displayOpenIncidentsUserControl1
             // 
             this.displayOpenIncidentsUserControl1.Location = new System.Drawing.Point(6, 6);
-            this.displayOpenIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.displayOpenIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6);
             this.displayOpenIncidentsUserControl1.Name = "displayOpenIncidentsUserControl1";
             this.displayOpenIncidentsUserControl1.Size = new System.Drawing.Size(785, 365);
             this.displayOpenIncidentsUserControl1.TabIndex = 0;
@@ -140,7 +163,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 504);
+            this.Controls.Add(this.usernameLabel);
+            this.Controls.Add(this.lnkLblLogout);
             this.Controls.Add(this.dashboardTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainDashboard";
@@ -150,6 +176,7 @@
             this.searchTabPage.ResumeLayout(false);
             this.displayOpenIncidentsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,5 +191,7 @@
         private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
         private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
         private UserControls.DisplayOpenIncidentsUserControl displayOpenIncidentsUserControl1;
+        private System.Windows.Forms.LinkLabel lnkLblLogout;
+        private System.Windows.Forms.Label usernameLabel;
     }
 }
