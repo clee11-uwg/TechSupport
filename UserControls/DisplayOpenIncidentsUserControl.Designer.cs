@@ -41,9 +41,9 @@
             this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.incidentIDHeader,
             this.productCodeHeader,
+            this.dateOpenedHeader,
             this.titleHeader,
-            this.descriptionHeader,
-            this.dateOpenedHeader});
+            this.descriptionHeader});
             this.incidentListView.HideSelection = false;
             this.incidentListView.Location = new System.Drawing.Point(3, 3);
             this.incidentListView.Name = "incidentListView";
@@ -64,19 +64,16 @@
             // 
             // titleHeader
             // 
-            this.titleHeader.DisplayIndex = 3;
             this.titleHeader.Text = "Title";
             this.titleHeader.Width = 130;
             // 
             // descriptionHeader
             // 
-            this.descriptionHeader.DisplayIndex = 4;
             this.descriptionHeader.Text = "Description";
             this.descriptionHeader.Width = 278;
             // 
             // dateOpenedHeader
             // 
-            this.dateOpenedHeader.DisplayIndex = 2;
             this.dateOpenedHeader.Text = "Date Opened";
             this.dateOpenedHeader.Width = 112;
             // 
