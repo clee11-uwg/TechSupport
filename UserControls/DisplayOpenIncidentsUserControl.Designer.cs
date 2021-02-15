@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.incidentListView = new System.Windows.Forms.ListView();
-            this.incidentIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.customerHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productCodeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.descriptionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.titleHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.technicianHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // incidentListView
             // 
             this.incidentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.incidentIDHeader,
             this.productCodeHeader,
             this.dateOpenedHeader,
-            this.titleHeader,
-            this.descriptionHeader});
+            this.customerHeader,
+            this.technicianHeader,
+            this.titleHeader});
             this.incidentListView.HideSelection = false;
             this.incidentListView.Location = new System.Drawing.Point(3, 3);
             this.incidentListView.Name = "incidentListView";
@@ -52,30 +52,30 @@
             this.incidentListView.UseCompatibleStateImageBehavior = false;
             this.incidentListView.View = System.Windows.Forms.View.Details;
             // 
-            // incidentIDHeader
+            // customerHeader
             // 
-            this.incidentIDHeader.Text = "Incident ID";
-            this.incidentIDHeader.Width = 75;
+            this.customerHeader.Text = "Customer";
+            this.customerHeader.Width = 119;
             // 
             // productCodeHeader
             // 
             this.productCodeHeader.Text = "Product Code";
-            this.productCodeHeader.Width = 105;
-            // 
-            // titleHeader
-            // 
-            this.titleHeader.Text = "Title";
-            this.titleHeader.Width = 130;
-            // 
-            // descriptionHeader
-            // 
-            this.descriptionHeader.Text = "Description";
-            this.descriptionHeader.Width = 278;
+            this.productCodeHeader.Width = 137;
             // 
             // dateOpenedHeader
             // 
             this.dateOpenedHeader.Text = "Date Opened";
-            this.dateOpenedHeader.Width = 112;
+            this.dateOpenedHeader.Width = 137;
+            // 
+            // titleHeader
+            // 
+            this.titleHeader.Text = "Title";
+            this.titleHeader.Width = 217;
+            // 
+            // technicianHeader
+            // 
+            this.technicianHeader.Text = "Technician";
+            this.technicianHeader.Width = 129;
             // 
             // DisplayOpenIncidentsUserControl
             // 
@@ -91,10 +91,10 @@
         #endregion
 
         private System.Windows.Forms.ListView incidentListView;
-        private System.Windows.Forms.ColumnHeader incidentIDHeader;
+        private System.Windows.Forms.ColumnHeader customerHeader;
         private System.Windows.Forms.ColumnHeader productCodeHeader;
         private System.Windows.Forms.ColumnHeader titleHeader;
-        private System.Windows.Forms.ColumnHeader descriptionHeader;
+        private System.Windows.Forms.ColumnHeader technicianHeader;
         private System.Windows.Forms.ColumnHeader dateOpenedHeader;
     }
 }

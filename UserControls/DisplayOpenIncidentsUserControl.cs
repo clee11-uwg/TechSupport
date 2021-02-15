@@ -27,11 +27,11 @@ namespace TechSupport.UserControls
                     for (int i = 0; i < incidentList.Count; i++)
                     {
                         incident = incidentList[i];
-                        incidentListView.Items.Add(incident.IncidentID.ToString());
-                        incidentListView.Items[i].SubItems.Add(incident.ProductCode.ToString());
+                        incidentListView.Items.Add(incident.ProductCode.ToString());
                         incidentListView.Items[i].SubItems.Add(incident.DateOpened.ToString("MM/dd/yyyy"));
+                        incidentListView.Items[i].SubItems.Add(incident.Customer.ToString());
+                        incidentListView.Items[i].SubItems.Add(incident.Technician);
                         incidentListView.Items[i].SubItems.Add(incident.Title);
-                        incidentListView.Items[i].SubItems.Add(incident.Description);
                     }
                 }
                 else
