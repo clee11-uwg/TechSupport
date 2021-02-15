@@ -28,172 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.customerIDTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.customerIDLabel = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.messageLabel = new System.Windows.Forms.Label();
+            this.addButton = new System.Windows.Forms.Button();
+            this.fieldsTableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.customerLabel = new System.Windows.Forms.Label();
+            this.productLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.customerComboBox = new System.Windows.Forms.ComboBox();
+            this.productComboBox = new System.Windows.Forms.ComboBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.fieldsTableLayout.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.customerIDTextBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.descriptionTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.titleLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.customerIDLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.addButton, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.clearButton, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.messageLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.titleTextBox, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 451);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // customerIDTextBox
-            // 
-            this.customerIDTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.customerIDTextBox.Location = new System.Drawing.Point(271, 189);
-            this.customerIDTextBox.Name = "customerIDTextBox";
-            this.customerIDTextBox.Size = new System.Drawing.Size(229, 20);
-            this.customerIDTextBox.TabIndex = 5;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.descriptionTextBox.Location = new System.Drawing.Point(271, 96);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(229, 20);
-            this.descriptionTextBox.TabIndex = 4;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(3, 0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(262, 93);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Incident Title:";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customerIDLabel
-            // 
-            this.customerIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerIDLabel.AutoSize = true;
-            this.customerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerIDLabel.Location = new System.Drawing.Point(3, 186);
-            this.customerIDLabel.Name = "customerIDLabel";
-            this.customerIDLabel.Size = new System.Drawing.Size(262, 93);
-            this.customerIDLabel.TabIndex = 2;
-            this.customerIDLabel.Text = "Customer ID:";
-            this.customerIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // addButton
-            // 
-            this.addButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(97, 396);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(73, 31);
-            this.addButton.TabIndex = 6;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // clearButton
             // 
-            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clearButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(366, 396);
+            this.clearButton.Location = new System.Drawing.Point(426, 173);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(73, 31);
+            this.clearButton.Size = new System.Drawing.Size(102, 31);
             this.clearButton.TabIndex = 7;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // messageLabel
+            // addButton
             // 
-            this.messageLabel.AutoSize = true;
-            this.messageLabel.Location = new System.Drawing.Point(3, 279);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(0, 13);
-            this.messageLabel.TabIndex = 8;
+            this.addButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.Location = new System.Drawing.Point(94, 173);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(154, 31);
+            this.addButton.TabIndex = 6;
+            this.addButton.Text = "Create Incident";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // fieldsTableLayout
+            // 
+            this.fieldsTableLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.fieldsTableLayout.ColumnCount = 3;
+            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
+            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.37838F));
+            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.fieldsTableLayout.Controls.Add(this.clearButton, 2, 4);
+            this.fieldsTableLayout.Controls.Add(this.addButton, 1, 4);
+            this.fieldsTableLayout.Controls.Add(this.customerLabel, 0, 0);
+            this.fieldsTableLayout.Controls.Add(this.productLabel, 0, 1);
+            this.fieldsTableLayout.Controls.Add(this.titleLabel, 0, 2);
+            this.fieldsTableLayout.Controls.Add(this.descriptionLabel, 0, 3);
+            this.fieldsTableLayout.Controls.Add(this.customerComboBox, 1, 0);
+            this.fieldsTableLayout.Controls.Add(this.titleTextBox, 1, 2);
+            this.fieldsTableLayout.Controls.Add(this.descriptionTextBox, 1, 3);
+            this.fieldsTableLayout.Controls.Add(this.productComboBox, 1, 1);
+            this.fieldsTableLayout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fieldsTableLayout.Location = new System.Drawing.Point(0, 0);
+            this.fieldsTableLayout.Margin = new System.Windows.Forms.Padding(3, 3, 13, 3);
+            this.fieldsTableLayout.Name = "fieldsTableLayout";
+            this.fieldsTableLayout.RowCount = 5;
+            this.fieldsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.fieldsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.84615F));
+            this.fieldsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.fieldsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.fieldsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.fieldsTableLayout.Size = new System.Drawing.Size(607, 296);
+            this.fieldsTableLayout.TabIndex = 8;
+            // 
+            // customerLabel
+            // 
+            this.customerLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.Location = new System.Drawing.Point(3, 5);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(68, 16);
+            this.customerLabel.TabIndex = 0;
+            this.customerLabel.Text = "Customer:";
+            this.customerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // productLabel
+            // 
+            this.productLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.productLabel.AutoSize = true;
+            this.productLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productLabel.Location = new System.Drawing.Point(3, 33);
+            this.productLabel.Name = "productLabel";
+            this.productLabel.Size = new System.Drawing.Size(57, 16);
+            this.productLabel.TabIndex = 1;
+            this.productLabel.Text = "Product:";
+            this.productLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(3, 64);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(37, 16);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.Text = "Title:";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(3, 93);
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(3, 91);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(262, 93);
-            this.descriptionLabel.TabIndex = 1;
-            this.descriptionLabel.Text = "Incident Description:";
-            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.descriptionLabel.Size = new System.Drawing.Size(79, 16);
+            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.Text = "Description:";
+            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // customerComboBox
+            // 
+            this.fieldsTableLayout.SetColumnSpan(this.customerComboBox, 2);
+            this.customerComboBox.Enabled = false;
+            this.customerComboBox.FormattingEnabled = true;
+            this.customerComboBox.Location = new System.Drawing.Point(94, 3);
+            this.customerComboBox.Name = "customerComboBox";
+            this.customerComboBox.Size = new System.Drawing.Size(435, 21);
+            this.customerComboBox.TabIndex = 4;
+            // 
+            // productComboBox
+            // 
+            this.fieldsTableLayout.SetColumnSpan(this.productComboBox, 2);
+            this.productComboBox.Enabled = false;
+            this.productComboBox.FormattingEnabled = true;
+            this.productComboBox.Location = new System.Drawing.Point(94, 29);
+            this.productComboBox.Name = "productComboBox";
+            this.productComboBox.Size = new System.Drawing.Size(435, 21);
+            this.productComboBox.TabIndex = 5;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(271, 3);
+            this.fieldsTableLayout.SetColumnSpan(this.titleTextBox, 2);
+            this.titleTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.titleTextBox.Location = new System.Drawing.Point(94, 63);
+            this.titleTextBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(229, 20);
-            this.titleTextBox.TabIndex = 3;
+            this.titleTextBox.Size = new System.Drawing.Size(435, 20);
+            this.titleTextBox.TabIndex = 6;
+            // 
+            // descriptionTextBox
+            // 
+            this.fieldsTableLayout.SetColumnSpan(this.descriptionTextBox, 2);
+            this.descriptionTextBox.Location = new System.Drawing.Point(94, 91);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(435, 76);
+            this.descriptionTextBox.TabIndex = 7;
             // 
             // AddIncidentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.fieldsTableLayout);
             this.Name = "AddIncidentUserControl";
-            this.Size = new System.Drawing.Size(537, 451);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.Size = new System.Drawing.Size(607, 312);
+            this.fieldsTableLayout.ResumeLayout(false);
+            this.fieldsTableLayout.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox customerIDTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label customerIDLabel;
-        private System.Windows.Forms.TextBox titleTextBox;
-        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button clearButton;
-        private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.TableLayoutPanel fieldsTableLayout;
+        private System.Windows.Forms.Label customerLabel;
+        private System.Windows.Forms.Label productLabel;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.ComboBox customerComboBox;
+        private System.Windows.Forms.ComboBox productComboBox;
+        private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
     }
 }

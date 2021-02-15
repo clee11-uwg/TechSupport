@@ -27,10 +27,10 @@ namespace TechSupport.User_Controls
             {
                 var title = this.titleTextBox.Text;
                 var description = this.descriptionTextBox.Text;
-                var customerID = int.Parse(this.customerIDTextBox.Text);
+                //var customerID = int.Parse(this.customerIDTextBox.Text);
 
-                this.incidentController.Add(new Incident(title, description, customerID));
-                this.messageLabel.Text = "Incident has been added";
+                //this.incidentController.Add(new Incident(title, description, customerID));
+                //this.messageLabel.Text = "Incident has been added";
             }
             catch (Exception exc)
             {
@@ -43,8 +43,8 @@ namespace TechSupport.User_Controls
         {
             this.titleTextBox.Text = "";
             this.descriptionTextBox.Text = "";
-            this.customerIDTextBox.Text = "";
-            this.messageLabel.Text = "";
+            //this.customerIDTextBox.Text = "";
+            //this.messageLabel.Text = "";
         }
 
     }
