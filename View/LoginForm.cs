@@ -28,6 +28,10 @@ namespace TechSupport.View
                 {
                     this.Show();
                 }
+                if (mainFormResult.ToString() == "Cancel")
+                {
+                    this.Close();
+                }
             }
             else
             {
