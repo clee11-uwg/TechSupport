@@ -4,8 +4,16 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Handles the SQL connections and queries to the Incidents table
+    /// </summary>
     public static class IncidentDB
     {
+        /// <summary>
+        /// Adds given incident to database
+        /// </summary>
+        /// <param name="incident">Incident to be added to the database</param>
+        /// <returns>Returns incidentID given by the databse when created</returns>
         public static int AddIncident(Incident incident)
         {
             int registrationCount;

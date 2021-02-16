@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using TechSupport.Model;
 
@@ -7,6 +6,10 @@ namespace TechSupport.DAL
 {
     public static class CustomerDB
     {
+        /// <summary>
+        /// Retrieves a list of Customers from the database
+        /// </summary>
+        /// <returns>Returns a list of Customer objects based on what is returned from the database</returns>
         public static List<Customer> GetCustomerList()
         {
             List<Customer> customerList = new List<Customer>();

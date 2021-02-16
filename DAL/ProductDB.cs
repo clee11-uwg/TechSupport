@@ -4,8 +4,15 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Handles the SQL connections and queries to the Products database table
+    /// </summary>
     public static class ProductDB
     {
+        /// <summary>
+        /// Retrieves a list of Products from the database
+        /// </summary>
+        /// <returns>Returns a list of Product objects based on what is returned from the database</returns>
         public static List<Product> GetProductList()
         {
             List<Product> productList = new List<Product>();
