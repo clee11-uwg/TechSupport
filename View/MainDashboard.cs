@@ -30,7 +30,7 @@ namespace TechSupport.View
             }
             if (dashboardTabControl.SelectedTab.Text == "Add Incident")
             {
-                this.addIncidentUserControl1.LoadComboBoxes();
+                this.addIncidentUserControl1.resetAddIncidentForm();
             }
         }
 
@@ -41,7 +41,7 @@ namespace TechSupport.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            this.addIncidentUserControl1.LoadComboBoxes();
+            this.addIncidentUserControl1.resetAddIncidentForm();
         }
     }
 }

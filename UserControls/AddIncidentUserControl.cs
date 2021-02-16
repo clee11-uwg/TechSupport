@@ -42,10 +42,17 @@ namespace TechSupport.User_Controls
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            
+            this.resetAddIncidentForm();
         }
 
-        public void LoadComboBoxes()
+        public void resetAddIncidentForm()
+        {
+            this.LoadComboBoxes();
+            titleTextBox.Text = "";
+            descriptionTextBox.Text = "";
+        }
+
+        private void LoadComboBoxes()
         {
             List<Customer> customerList;
             customerList = CustomerDB.GetCustomerList();
