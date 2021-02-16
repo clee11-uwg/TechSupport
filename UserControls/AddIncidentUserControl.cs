@@ -45,6 +45,9 @@ namespace TechSupport.User_Controls
             this.resetAddIncidentForm();
         }
 
+        /// <summary>
+        /// Resets the combo boxes and the text boxes
+        /// </summary>
         public void resetAddIncidentForm()
         {
             this.LoadComboBoxes();
@@ -72,7 +75,7 @@ namespace TechSupport.User_Controls
             incident.CustomerID = (int)customerComboBox.SelectedValue;
             incident.ProductCode = productComboBox.SelectedValue.ToString();
             incident.DateOpened = DateTime.Now;
-            if (string.IsNullOrEmpty(titleTextBox.Text) || string.IsNullOrEmpty(descriptionTextBox.Text))
+            if (string.IsNullOrEmpty(titleTextBox.Text.Trim()) || string.IsNullOrEmpty(descriptionTextBox.Text.Trim()))
             {
                 throw new Exception("Title and description cannot be empty");
             }
