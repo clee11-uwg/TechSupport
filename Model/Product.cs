@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace TechSupport.Model
 {
-    public class Customer
+    public class Product
     {
+        public string ProductCode { get; set; }
         public string Name { get; set; }
 
-        public int CustomerID { get; set; }
-
-        public Customer() { }
+        public Product() { }
     }
 }

@@ -13,6 +13,7 @@ namespace TechSupport.User_Controls
         /// Add Incident Dialog that displays the fields needed to create a new incident
         /// </summary>
         private readonly IncidentController incidentController;
+        public Incident incident;
 
         /// <summary>
         /// 0 parameter constructor that creates a new instance of the incident controller
@@ -27,12 +28,17 @@ namespace TechSupport.User_Controls
         {
             try
             {
-                var title = this.titleTextBox.Text;
-                var description = this.descriptionTextBox.Text;
-                //var customerID = int.Parse(this.customerIDTextBox.Text);
-
-                //this.incidentController.Add(new Incident(title, description, customerID));
-                //this.messageLabel.Text = "Incident has been added";
+                incident = new Incident();
+                this.SetIncidentData(incident);
+                try
+                {
+                    incident.IncidentID = IncidentDB.AddIncident(incident);
+                    MessageBox.Show("Incident has been added to the database", "Successfully Added!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
             catch (Exception exc)
             {
@@ -45,8 +51,6 @@ namespace TechSupport.User_Controls
         {
             this.titleTextBox.Text = "";
             this.descriptionTextBox.Text = "";
-            //this.customerIDTextBox.Text = "";
-            //this.messageLabel.Text = "";
         }
 
         public void LoadComboBoxes()
@@ -55,8 +59,22 @@ namespace TechSupport.User_Controls
             customerList = CustomerDB.GetCustomerList();
             customerComboBox.DataSource = customerList;
             customerComboBox.DisplayMember = "Name";
-            customerComboBox.ValueMember = "Name";
+            customerComboBox.ValueMember = "CustomerID";
+
+            List<Product> productList;
+            productList = ProductDB.GetProductList();
+            productComboBox.DataSource = productList;
+            productComboBox.DisplayMember = "Name";
+            productComboBox.ValueMember = "ProductCode";
         }
 
+        private void SetIncidentData(Incident incident)
+        {
+            incident.CustomerID = (int)customerComboBox.SelectedValue;
+            incident.ProductCode = productComboBox.SelectedValue.ToString();
+            incident.DateOpened = DateTime.Now;
+            incident.Title = titleTextBox.Text;
+            incident.Description = descriptionTextBox.Text;
+        }
     }
 }

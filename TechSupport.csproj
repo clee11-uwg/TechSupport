@@ -49,10 +49,13 @@
     <Compile Include="Controller\IncidentController.cs" />
     <Compile Include="DAL\CustomerDB.cs" />
     <Compile Include="DAL\IncidentDAL.cs" />
+    <Compile Include="DAL\IncidentDB.cs" />
     <Compile Include="DAL\IncidentsDBConnection.cs" />
     <Compile Include="DAL\IncidentsDBDAL.cs" />
+    <Compile Include="DAL\ProductDB.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Incident.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\AddIncidentUserControl.cs">

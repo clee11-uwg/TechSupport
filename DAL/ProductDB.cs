@@ -8,14 +8,14 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
-    public static class CustomerDB
+    public static class ProductDB
     {
-        public static List<Customer> GetCustomerList()
+        public static List<Product> GetProductList()
         {
-            List<Customer> customerList = new List<Customer>();
-            string selectStatement = "SELECT CustomerID, Name FROM Customers;";
+            List<Product> productList = new List<Product>();
+            string selectStatement = "SELECT ProductCode, Name FROM Products;";
 
-            SqlConnection connection = IncidentsDBConnection.GetConnection();            
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
 
@@ -23,14 +23,15 @@ namespace TechSupport.DAL
             {
                 connection.Open();
                 SqlDataReader reader = selectCommand.ExecuteReader();
-                int customerID = reader.GetOrdinal("CustomerID");
-                int customerName = reader.GetOrdinal("Name");
+                int productCode = reader.GetOrdinal("ProductCode");
+                int productName = reader.GetOrdinal("Name");
+
                 while (reader.Read())
                 {
-                    Customer customer = new Customer();
-                    customer.CustomerID = reader.GetInt32(customerID);
-                    customer.Name = reader.GetString(customerName);
-                    customerList.Add(customer);
+                    Product product = new Product();
+                    product.ProductCode = reader.GetString(productCode);
+                    product.Name = reader.GetString(productName);
+                    productList.Add(product);
                 }
                 reader.Close();
             }
@@ -42,7 +43,7 @@ namespace TechSupport.DAL
             {
                 connection.Close();
             }
-            return customerList;
+            return productList;
         }
     }
 }
