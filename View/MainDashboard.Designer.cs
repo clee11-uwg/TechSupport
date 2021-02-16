@@ -54,7 +54,7 @@
             this.dashboardTabControl.Controls.Add(this.displayOpenIncidentsTabPage);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardTabControl.Location = new System.Drawing.Point(0, 108);
+            this.dashboardTabControl.Location = new System.Drawing.Point(0, 60);
             this.dashboardTabControl.Name = "dashboardTabControl";
             this.dashboardTabControl.SelectedIndex = 0;
             this.dashboardTabControl.Size = new System.Drawing.Size(924, 503);
@@ -155,14 +155,14 @@
             this.addIncidentUserControl1.Location = new System.Drawing.Point(11, 9);
             this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(880, 430);
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(880, 407);
             this.addIncidentUserControl1.TabIndex = 0;
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 611);
+            this.ClientSize = new System.Drawing.Size(924, 563);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.lnkLblLogout);
             this.Controls.Add(this.dashboardTabControl);
