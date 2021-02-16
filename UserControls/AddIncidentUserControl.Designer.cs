@@ -36,9 +36,9 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
-            this.productComboBox = new System.Windows.Forms.ComboBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.productComboBox = new System.Windows.Forms.ComboBox();
             this.fieldsTableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.clearButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(426, 173);
+            this.clearButton.Location = new System.Drawing.Point(425, 173);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(102, 31);
             this.clearButton.TabIndex = 7;
@@ -72,7 +72,7 @@
             this.fieldsTableLayout.ColumnCount = 3;
             this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
             this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.37838F));
-            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.fieldsTableLayout.Controls.Add(this.clearButton, 2, 4);
             this.fieldsTableLayout.Controls.Add(this.addButton, 1, 4);
             this.fieldsTableLayout.Controls.Add(this.customerLabel, 0, 0);
@@ -147,22 +147,12 @@
             // customerComboBox
             // 
             this.fieldsTableLayout.SetColumnSpan(this.customerComboBox, 2);
-            this.customerComboBox.Enabled = false;
+            this.customerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customerComboBox.FormattingEnabled = true;
             this.customerComboBox.Location = new System.Drawing.Point(94, 3);
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(435, 21);
             this.customerComboBox.TabIndex = 4;
-            // 
-            // productComboBox
-            // 
-            this.fieldsTableLayout.SetColumnSpan(this.productComboBox, 2);
-            this.productComboBox.Enabled = false;
-            this.productComboBox.FormattingEnabled = true;
-            this.productComboBox.Location = new System.Drawing.Point(94, 29);
-            this.productComboBox.Name = "productComboBox";
-            this.productComboBox.Size = new System.Drawing.Size(435, 21);
-            this.productComboBox.TabIndex = 5;
             // 
             // titleTextBox
             // 
@@ -182,6 +172,16 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(435, 76);
             this.descriptionTextBox.TabIndex = 7;
+            // 
+            // productComboBox
+            // 
+            this.fieldsTableLayout.SetColumnSpan(this.productComboBox, 2);
+            this.productComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.productComboBox.FormattingEnabled = true;
+            this.productComboBox.Location = new System.Drawing.Point(94, 29);
+            this.productComboBox.Name = "productComboBox";
+            this.productComboBox.Size = new System.Drawing.Size(435, 21);
+            this.productComboBox.TabIndex = 5;
             // 
             // AddIncidentUserControl
             // 

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.DAL;
 using TechSupport.Model;
 
 namespace TechSupport.User_Controls
@@ -45,6 +47,15 @@ namespace TechSupport.User_Controls
             this.descriptionTextBox.Text = "";
             //this.customerIDTextBox.Text = "";
             //this.messageLabel.Text = "";
+        }
+
+        public void LoadComboBoxes()
+        {
+            List<Customer> customerList;
+            customerList = CustomerDB.GetCustomerList();
+            customerComboBox.DataSource = customerList;
+            customerComboBox.DisplayMember = "Name";
+            customerComboBox.ValueMember = "Name";
         }
 
     }

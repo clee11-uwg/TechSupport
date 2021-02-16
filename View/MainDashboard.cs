@@ -28,11 +28,20 @@ namespace TechSupport.View
             {
                 this.all_IncidentsUserControl1.RefreshDataGridView();
             }
+            if (dashboardTabControl.SelectedTab.Text == "Add Incident")
+            {
+                this.addIncidentUserControl1.LoadComboBoxes();
+            }
         }
 
         private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void MainDashboard_Load(object sender, EventArgs e)
+        {
+            this.addIncidentUserControl1.LoadComboBoxes();
         }
     }
 }
