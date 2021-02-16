@@ -26,31 +26,23 @@ namespace TechSupport.User_Controls
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            incident = new Incident();
+            
             try
             {
-                incident = new Incident();
                 this.SetIncidentData(incident);
-                try
-                {
-                    incident.IncidentID = IncidentDB.AddIncident(incident);
-                    MessageBox.Show("Incident has been added to the database", "Successfully Added!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                incident.IncidentID = IncidentDB.AddIncident(incident);
+                MessageBox.Show("Incident has been added to the database", "Successfully Added!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                MessageBox.Show("One of the inputs appear to be off \n" + exc.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            this.titleTextBox.Text = "";
-            this.descriptionTextBox.Text = "";
+            
         }
 
         public void LoadComboBoxes()
@@ -73,8 +65,15 @@ namespace TechSupport.User_Controls
             incident.CustomerID = (int)customerComboBox.SelectedValue;
             incident.ProductCode = productComboBox.SelectedValue.ToString();
             incident.DateOpened = DateTime.Now;
-            incident.Title = titleTextBox.Text;
-            incident.Description = descriptionTextBox.Text;
+            if (string.IsNullOrEmpty(titleTextBox.Text) || string.IsNullOrEmpty(descriptionTextBox.Text))
+            {
+                throw new Exception("Title and description cannot be empty");
+            }
+            else
+            {
+                incident.Title = titleTextBox.Text;
+                incident.Description = descriptionTextBox.Text;
+            }
         }
     }
 }
