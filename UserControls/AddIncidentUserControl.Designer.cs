@@ -49,7 +49,7 @@
             this.clearButton.Location = new System.Drawing.Point(425, 173);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(102, 31);
-            this.clearButton.TabIndex = 7;
+            this.clearButton.TabIndex = 6;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -61,7 +61,7 @@
             this.addButton.Location = new System.Drawing.Point(94, 173);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(154, 31);
-            this.addButton.TabIndex = 6;
+            this.addButton.TabIndex = 5;
             this.addButton.Text = "Create Incident";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -152,7 +152,7 @@
             this.customerComboBox.Location = new System.Drawing.Point(94, 3);
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(435, 21);
-            this.customerComboBox.TabIndex = 4;
+            this.customerComboBox.TabIndex = 1;
             // 
             // titleTextBox
             // 
@@ -162,7 +162,7 @@
             this.titleTextBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(435, 20);
-            this.titleTextBox.TabIndex = 6;
+            this.titleTextBox.TabIndex = 3;
             // 
             // descriptionTextBox
             // 
@@ -171,7 +171,7 @@
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(435, 76);
-            this.descriptionTextBox.TabIndex = 7;
+            this.descriptionTextBox.TabIndex = 4;
             // 
             // productComboBox
             // 
@@ -181,7 +181,7 @@
             this.productComboBox.Location = new System.Drawing.Point(94, 29);
             this.productComboBox.Name = "productComboBox";
             this.productComboBox.Size = new System.Drawing.Size(435, 21);
-            this.productComboBox.TabIndex = 5;
+            this.productComboBox.TabIndex = 2;
             // 
             // AddIncidentUserControl
             // 
