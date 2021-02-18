@@ -22,7 +22,8 @@ namespace TechSupport.DAL
                                         "i.CustomerID = c.CustomerID " +
                                         "LEFT OUTER JOIN Technicians t ON " +
                                         "i.TechID = t.TechID " +
-                                        "WHERE DateClosed IS NULL; ";
+                                        "WHERE DateClosed IS NULL " +
+                                        "ORDER BY DateOpened DESC; ";
             
             using (SqlConnection connection = IncidentsDBConnection.GetConnection())
             {

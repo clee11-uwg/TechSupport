@@ -41,13 +41,13 @@ namespace TechSupport.User_Controls
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            this.resetAddIncidentForm();
+            this.ResetAddIncidentForm();
         }
 
         /// <summary>
         /// Resets the combo boxes and the text boxes
         /// </summary>
-        public void resetAddIncidentForm()
+        public void ResetAddIncidentForm()
         {
             this.LoadComboBoxes();
             titleTextBox.Text = "";
