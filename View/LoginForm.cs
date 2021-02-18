@@ -22,16 +22,19 @@ namespace TechSupport.View
             {
                 //MainForm mainForm = new MainForm(txtBxUsername.Text); 
                 this.Hide();
-                MainDashboard mainDashboard = new MainDashboard(txtBxUsername.Text);
-                DialogResult mainFormResult = mainDashboard.ShowDialog();
-                if (mainFormResult.ToString() == "OK")
+                using (MainDashboard mainDashboard = new MainDashboard(txtBxUsername.Text))
                 {
-                    this.Show();
+                    DialogResult mainFormResult = mainDashboard.ShowDialog();
+                    if (mainFormResult.ToString() == "OK")
+                    {
+                        this.Show();
+                    }
+                    if (mainFormResult.ToString() == "Cancel")
+                    {
+                        this.Close();
+                    }
                 }
-                if (mainFormResult.ToString() == "Cancel")
-                {
-                    this.Close();
-                }
+                
             }
             else
             {
