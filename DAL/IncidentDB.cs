@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using TechSupport.Controller;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -16,7 +17,7 @@ namespace TechSupport.DAL
         /// <returns>Returns incidentID given by the databse when created</returns>
         public static int AddIncident(Incident incident)
         {
-            int registrationCount;
+            IncidentController incidentController = new IncidentController();
 
             SqlConnection connection = IncidentsDBConnection.GetConnection();
             string insertStatement =
@@ -28,19 +29,11 @@ namespace TechSupport.DAL
             insertCommand.Parameters.AddWithValue("@DateOpened", incident.DateOpened);
             insertCommand.Parameters.AddWithValue("@Title", incident.Title);
             insertCommand.Parameters.AddWithValue("@Description", incident.Description);
-
-            string registrationCheckStatement =
-                    "SELECT COUNT(*) FROM Registrations " +
-                    "WHERE CustomerID = @CustomerID " +
-                    "AND ProductCode = @ProductCode";
-            SqlCommand registrationCommand = new SqlCommand(registrationCheckStatement, connection);
-            registrationCommand.Parameters.AddWithValue("@CustomerID", incident.CustomerID);
-            registrationCommand.Parameters.AddWithValue("@ProductCode", incident.ProductCode);
-
+            
             try
             {
                 connection.Open();
-                registrationCount = Convert.ToInt32(registrationCommand.ExecuteScalar());
+                int registrationCount = incidentController.CheckRegistration(incident);
                 if (registrationCount == 0)
                 {
                     throw new Exception("The customer and product selected are not registered together.");
