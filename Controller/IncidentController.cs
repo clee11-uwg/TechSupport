@@ -76,5 +76,16 @@ namespace TechSupport.Controller
             int incidentID = IncidentDB.AddIncident(incident);
             return incidentID;
         }
+
+        /// <summary>
+        /// Retrieves a list of customers from the database vis the CustomerDB's GetCustomerList method
+        /// </summary>
+        /// <returns>Returns a list of customers from the database</returns>
+        public List<Customer> GetCustomerList()
+        {
+            List<Customer> myCustomerList;
+            myCustomerList = CustomerDB.GetCustomerList();
+            return myCustomerList;
+        }
     }
 }

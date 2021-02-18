@@ -58,7 +58,7 @@ namespace TechSupport.User_Controls
         private void LoadComboBoxes()
         {
             List<Customer> customerList;
-            customerList = CustomerDB.GetCustomerList();
+            customerList = this.incidentController.GetCustomerList();
             customerComboBox.DataSource = customerList;
             customerComboBox.DisplayMember = "Name";
             customerComboBox.ValueMember = "CustomerID";
