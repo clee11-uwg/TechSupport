@@ -4,9 +4,16 @@ using TechSupport.Controller;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Search Incident Dialog that allows the user to search for a set of incidents based on that incident's customerID associated with it
+    /// </summary>
     public partial class SearchIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;
+
+        /// <summary>
+        /// 0 paramter constructor
+        /// </summary>
         public SearchIncidentsUserControl()
         {
             InitializeComponent();

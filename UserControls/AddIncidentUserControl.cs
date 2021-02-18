@@ -7,11 +7,11 @@ using TechSupport.Model;
 
 namespace TechSupport.User_Controls
 {
+    /// <summary>
+    /// Add Incident Dialog that displays the fields needed to create a new incident
+    /// </summary>
     public partial class AddIncidentUserControl : UserControl
-    {
-        /// <summary>
-        /// Add Incident Dialog that displays the fields needed to create a new incident
-        /// </summary>
+    {        
         private readonly IncidentController incidentController;
         public Incident incident;
 

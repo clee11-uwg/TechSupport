@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Incident Data Access Layer that handles retrieving, adding, and searching functionality to the incident list
+    /// </summary>
     public class IncidentDAL
     {
-        /// <summary>
-        /// Incident Data Access Layer that handles retrieving, adding, and searching functionality to the incident list
-        /// </summary>
         private static List<Incident> _incidents = new List<Incident>
         {
             new Incident("Site down", "The website is down", 5),

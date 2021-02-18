@@ -4,6 +4,9 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Handles getting a list of customers from the database
+    /// </summary>
     public static class CustomerDB
     {
         /// <summary>

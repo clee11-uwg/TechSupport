@@ -6,9 +6,16 @@ using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Display Open Incident dialog that shows all of the currently open incidents
+    /// </summary>
     public partial class DisplayOpenIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;
+
+        /// <summary>
+        /// 0 paramter constructor
+        /// </summary>
         public DisplayOpenIncidentsUserControl()
         {
             InitializeComponent();

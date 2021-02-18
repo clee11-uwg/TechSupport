@@ -5,11 +5,11 @@ using TechSupport.Model;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Add Incident Dialog that displays the fields needed to create a new incident
+    /// </summary>
     public partial class AddIncidentDialog : Form
     {
-        /// <summary>
-        /// Add Incident Dialog that displays the fields needed to create a new incident
-        /// </summary>
         private readonly IncidentController incidentController;
         
         /// <summary>
