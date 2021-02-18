@@ -20,16 +20,19 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             this.incidentController = new IncidentController();
-            this.PopulateListView();
         }
 
-        private void PopulateListView()
+        /// <summary>
+        /// Populates the Open Incident List View
+        /// </summary>
+        public void PopulateListView()
         {
-            List<Incident> incidentList = this.incidentController.GetOpenIncidents();
+            List <Incident> incidentList = this.incidentController.GetOpenIncidents();
             try
             {
                 if (incidentList.Count > 0)
                 {
+                    incidentListView.Items.Clear();
                     Incident incident;
                     for (int i = 0; i < incidentList.Count; i++)
                     {

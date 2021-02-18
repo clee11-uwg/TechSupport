@@ -32,6 +32,10 @@ namespace TechSupport.View
             {
                 this.addIncidentUserControl1.ResetAddIncidentForm();
             }
+            if (dashboardTabControl.SelectedTab.Text == "Display Open Incidents")
+            {
+                this.displayOpenIncidentsUserControl1.PopulateListView();
+            }
         }
 
         private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
