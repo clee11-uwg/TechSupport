@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
-//using TechSupport.DAL;
 using TechSupport.Model;
 
 namespace TechSupport.User_Controls
@@ -64,7 +63,7 @@ namespace TechSupport.User_Controls
             customerComboBox.ValueMember = "CustomerID";
 
             List<Product> productList;
-            productList = ProductDB.GetProductList();
+            productList = this.incidentController.GetProductList();
             productComboBox.DataSource = productList;
             productComboBox.DisplayMember = "Name";
             productComboBox.ValueMember = "ProductCode";

@@ -73,12 +73,13 @@ namespace TechSupport.Controller
         /// <returns>Returns incidentID of incident that was added</returns>
         public int AddIncidentToDB(Incident incident)
         {
-            int incidentID = IncidentDB.AddIncident(incident);
+            int incidentID;
+            incidentID = IncidentDB.AddIncident(incident);
             return incidentID;
         }
 
         /// <summary>
-        /// Retrieves a list of customers from the database vis the CustomerDB's GetCustomerList method
+        /// Retrieves a list of customers from the database via the CustomerDB's GetCustomerList method
         /// </summary>
         /// <returns>Returns a list of customers from the database</returns>
         public List<Customer> GetCustomerList()
@@ -86,6 +87,17 @@ namespace TechSupport.Controller
             List<Customer> myCustomerList;
             myCustomerList = CustomerDB.GetCustomerList();
             return myCustomerList;
+        }
+
+        /// <summary>
+        /// Retrieves a list of products form the database via the ProductDB's GetProductList method
+        /// </summary>
+        /// <returns>Returns a list of products from the database</returns>
+        public List<Product> GetProductList()
+        {
+            List<Product> myProductList;
+            myProductList = ProductDB.GetProductList();
+            return myProductList;
         }
     }
 }
