@@ -65,5 +65,16 @@ namespace TechSupport.Controller
             filteredList = this.incidentSource.Search(customerID);
             return filteredList;
         }
+
+        /// <summary>
+        /// Adds incident to database via the IncidentDB's AddIncident method
+        /// </summary>
+        /// <param name="incident">Incident to be added</param>
+        /// <returns>Returns incidentID of incident that was added</returns>
+        public int AddIncidentToDB(Incident incident)
+        {
+            int incidentID = IncidentDB.AddIncident(incident);
+            return incidentID;
+        }
     }
 }

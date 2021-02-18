@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.DAL;
+//using TechSupport.DAL;
 using TechSupport.Model;
 
 namespace TechSupport.User_Controls
@@ -31,7 +31,7 @@ namespace TechSupport.User_Controls
             try
             {
                 this.SetIncidentData(incident);
-                incident.IncidentID = IncidentDB.AddIncident(incident);
+                incident.IncidentID = this.incidentController.AddIncidentToDB(incident);
                 MessageBox.Show("Incident has been added to the database", "Successfully Added!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
