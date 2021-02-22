@@ -41,6 +41,7 @@ namespace TechSupport.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
+            this.displayOpenIncidentsUserControl1.PopulateListView();
             this.addIncidentUserControl1.ResetAddIncidentForm();
         }
     }
