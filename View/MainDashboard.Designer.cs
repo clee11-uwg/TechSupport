@@ -31,27 +31,19 @@
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.addIncidentUserControl1 = new TechSupport.User_Controls.AddIncidentUserControl();
-            this.incidentsTabPage = new System.Windows.Forms.TabPage();
-            this.all_IncidentsUserControl1 = new TechSupport.UserControls.All_IncidentsUserControl();
-            this.searchTabPage = new System.Windows.Forms.TabPage();
-            this.searchIncidentsUserControl1 = new TechSupport.UserControls.SearchIncidentsUserControl();
             this.displayOpenIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.displayOpenIncidentsUserControl1 = new TechSupport.UserControls.DisplayOpenIncidentsUserControl();
             this.lnkLblLogout = new System.Windows.Forms.LinkLabel();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.dashboardTabControl.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
-            this.incidentsTabPage.SuspendLayout();
-            this.searchTabPage.SuspendLayout();
             this.displayOpenIncidentsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashboardTabControl
             // 
-            this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
-            this.dashboardTabControl.Controls.Add(this.incidentsTabPage);
-            this.dashboardTabControl.Controls.Add(this.searchTabPage);
             this.dashboardTabControl.Controls.Add(this.displayOpenIncidentsTabPage);
+            this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 60);
@@ -64,10 +56,10 @@
             // addIncidentTabPage
             // 
             this.addIncidentTabPage.Controls.Add(this.addIncidentUserControl1);
-            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 34);
+            this.addIncidentTabPage.Location = new System.Drawing.Point(4, 38);
             this.addIncidentTabPage.Name = "addIncidentTabPage";
             this.addIncidentTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addIncidentTabPage.Size = new System.Drawing.Size(916, 465);
+            this.addIncidentTabPage.Size = new System.Drawing.Size(916, 461);
             this.addIncidentTabPage.TabIndex = 0;
             this.addIncidentTabPage.Text = "Add Incident";
             this.addIncidentTabPage.UseVisualStyleBackColor = true;
@@ -81,50 +73,12 @@
             this.addIncidentUserControl1.Size = new System.Drawing.Size(880, 407);
             this.addIncidentUserControl1.TabIndex = 0;
             // 
-            // incidentsTabPage
-            // 
-            this.incidentsTabPage.Controls.Add(this.all_IncidentsUserControl1);
-            this.incidentsTabPage.Location = new System.Drawing.Point(4, 34);
-            this.incidentsTabPage.Name = "incidentsTabPage";
-            this.incidentsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.incidentsTabPage.Size = new System.Drawing.Size(916, 465);
-            this.incidentsTabPage.TabIndex = 1;
-            this.incidentsTabPage.Text = "All Incidents";
-            this.incidentsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // all_IncidentsUserControl1
-            // 
-            this.all_IncidentsUserControl1.Location = new System.Drawing.Point(102, 38);
-            this.all_IncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.all_IncidentsUserControl1.Name = "all_IncidentsUserControl1";
-            this.all_IncidentsUserControl1.Size = new System.Drawing.Size(584, 315);
-            this.all_IncidentsUserControl1.TabIndex = 0;
-            // 
-            // searchTabPage
-            // 
-            this.searchTabPage.Controls.Add(this.searchIncidentsUserControl1);
-            this.searchTabPage.Location = new System.Drawing.Point(4, 34);
-            this.searchTabPage.Name = "searchTabPage";
-            this.searchTabPage.Size = new System.Drawing.Size(916, 465);
-            this.searchTabPage.TabIndex = 2;
-            this.searchTabPage.Text = "Search Incidents";
-            this.searchTabPage.UseVisualStyleBackColor = true;
-            // 
-            // searchIncidentsUserControl1
-            // 
-            this.searchIncidentsUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.searchIncidentsUserControl1.Location = new System.Drawing.Point(11, 15);
-            this.searchIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.searchIncidentsUserControl1.Name = "searchIncidentsUserControl1";
-            this.searchIncidentsUserControl1.Size = new System.Drawing.Size(780, 356);
-            this.searchIncidentsUserControl1.TabIndex = 0;
-            // 
             // displayOpenIncidentsTabPage
             // 
             this.displayOpenIncidentsTabPage.Controls.Add(this.displayOpenIncidentsUserControl1);
-            this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.displayOpenIncidentsTabPage.Location = new System.Drawing.Point(4, 38);
             this.displayOpenIncidentsTabPage.Name = "displayOpenIncidentsTabPage";
-            this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(916, 465);
+            this.displayOpenIncidentsTabPage.Size = new System.Drawing.Size(916, 461);
             this.displayOpenIncidentsTabPage.TabIndex = 3;
             this.displayOpenIncidentsTabPage.Text = "Display Open Incidents";
             this.displayOpenIncidentsTabPage.UseVisualStyleBackColor = true;
@@ -143,7 +97,7 @@
             this.lnkLblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkLblLogout.Location = new System.Drawing.Point(701, 59);
             this.lnkLblLogout.Name = "lnkLblLogout";
-            this.lnkLblLogout.Size = new System.Drawing.Size(65, 22);
+            this.lnkLblLogout.Size = new System.Drawing.Size(78, 26);
             this.lnkLblLogout.TabIndex = 2;
             this.lnkLblLogout.TabStop = true;
             this.lnkLblLogout.Text = "Logout";
@@ -155,7 +109,7 @@
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.Location = new System.Drawing.Point(705, 23);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(0, 22);
+            this.usernameLabel.Size = new System.Drawing.Size(0, 26);
             this.usernameLabel.TabIndex = 3;
             // 
             // MainDashboard
@@ -173,8 +127,6 @@
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.dashboardTabControl.ResumeLayout(false);
             this.addIncidentTabPage.ResumeLayout(false);
-            this.incidentsTabPage.ResumeLayout(false);
-            this.searchTabPage.ResumeLayout(false);
             this.displayOpenIncidentsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,11 +137,7 @@
 
         private System.Windows.Forms.TabControl dashboardTabControl;
         private System.Windows.Forms.TabPage addIncidentTabPage;
-        private System.Windows.Forms.TabPage incidentsTabPage;
-        private System.Windows.Forms.TabPage searchTabPage;
         private System.Windows.Forms.TabPage displayOpenIncidentsTabPage;
-        private UserControls.All_IncidentsUserControl all_IncidentsUserControl1;
-        private UserControls.SearchIncidentsUserControl searchIncidentsUserControl1;
         private UserControls.DisplayOpenIncidentsUserControl displayOpenIncidentsUserControl1;
         private System.Windows.Forms.LinkLabel lnkLblLogout;
         private System.Windows.Forms.Label usernameLabel;
