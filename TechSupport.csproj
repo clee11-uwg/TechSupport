@@ -82,6 +82,12 @@
     <Compile Include="UserControls\SearchIncidentsUserControl.Designer.cs">
       <DependentUpon>SearchIncidentsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UpdateIncidentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UpdateIncidentUserControl.Designer.cs">
+      <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddIncidentDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SearchIncidentsUserControl.resx">
       <DependentUpon>SearchIncidentsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UpdateIncidentUserControl.resx">
+      <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddIncidentDialog.resx">
       <DependentUpon>AddIncidentDialog.cs</DependentUpon>

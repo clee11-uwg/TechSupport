@@ -24,10 +24,6 @@ namespace TechSupport.View
 
         private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dashboardTabControl.SelectedTab.Text == "All Incidents")
-            {
-                this.all_IncidentsUserControl1.RefreshDataGridView();
-            }
             if (dashboardTabControl.SelectedTab.Text == "Add Incident")
             {
                 this.addIncidentUserControl1.ResetAddIncidentForm();

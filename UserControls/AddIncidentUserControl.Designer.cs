@@ -46,7 +46,7 @@
             // 
             this.clearButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(425, 173);
+            this.clearButton.Location = new System.Drawing.Point(424, 173);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(102, 31);
             this.clearButton.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.fieldsTableLayout.ColumnCount = 3;
             this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
             this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.37838F));
-            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.fieldsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.fieldsTableLayout.Controls.Add(this.clearButton, 2, 4);
             this.fieldsTableLayout.Controls.Add(this.addButton, 1, 4);
             this.fieldsTableLayout.Controls.Add(this.customerLabel, 0, 0);
@@ -101,9 +101,9 @@
             this.customerLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.customerLabel.AutoSize = true;
             this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLabel.Location = new System.Drawing.Point(3, 5);
+            this.customerLabel.Location = new System.Drawing.Point(3, 0);
             this.customerLabel.Name = "customerLabel";
-            this.customerLabel.Size = new System.Drawing.Size(68, 16);
+            this.customerLabel.Size = new System.Drawing.Size(82, 26);
             this.customerLabel.TabIndex = 0;
             this.customerLabel.Text = "Customer:";
             this.customerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -113,9 +113,9 @@
             this.productLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.productLabel.AutoSize = true;
             this.productLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productLabel.Location = new System.Drawing.Point(3, 33);
+            this.productLabel.Location = new System.Drawing.Point(3, 31);
             this.productLabel.Name = "productLabel";
-            this.productLabel.Size = new System.Drawing.Size(57, 16);
+            this.productLabel.Size = new System.Drawing.Size(72, 20);
             this.productLabel.TabIndex = 1;
             this.productLabel.Text = "Product:";
             this.productLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,9 +125,9 @@
             this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(3, 64);
+            this.titleLabel.Location = new System.Drawing.Point(3, 62);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(37, 16);
+            this.titleLabel.Size = new System.Drawing.Size(46, 20);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Title:";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,7 +139,7 @@
             this.descriptionLabel.Location = new System.Drawing.Point(3, 91);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(79, 16);
+            this.descriptionLabel.Size = new System.Drawing.Size(77, 40);
             this.descriptionLabel.TabIndex = 3;
             this.descriptionLabel.Text = "Description:";
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
