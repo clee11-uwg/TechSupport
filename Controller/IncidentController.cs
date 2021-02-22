@@ -80,6 +80,17 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Rtrieves the incident from the IncidentDB class based on provided incidentID
+        /// </summary>
+        /// <param name="incidentID"></param>
+        /// <returns>Returns incident whose ID is the ID passed in</returns>
+        public Incident GetIncident(int incidentID)
+        {
+            Incident incident = IncidentDB.GetIncident(incidentID);
+            return incident;
+        }
+
+        /// <summary>
         /// Retrieves a list of customers from the database via the CustomerDB's GetCustomerList method
         /// </summary>
         /// <returns>Returns a list of customers from the database</returns>

@@ -106,6 +106,7 @@
             this.getIncidentButton.TabIndex = 2;
             this.getIncidentButton.Text = "Get";
             this.getIncidentButton.UseVisualStyleBackColor = true;
+            this.getIncidentButton.Click += new System.EventHandler(this.GetIncidentButton_Click);
             // 
             // tableLayoutPanel1
             // 

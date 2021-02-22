@@ -56,5 +56,84 @@ namespace TechSupport.DAL
                 connection.Close();
             }
         }
+
+        public static Incident GetIncident(int incidentID)
+        {
+            Incident incident = new Incident();
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+            
+            string selectStatement =
+                "SELECT IncidentID, c.name as Customer, ProductCode, t.name as Technician, DateOpened, Title, Description " +
+                "FROM incidents i JOIN Customers c ON " +
+                "i.CustomerID = c.CustomerID " +
+                "JOIN Technicians t ON " +
+                "i.TechID = t.TechID " +
+                "WHERE IncidentID = @IncidentID";
+            
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@IncidentID", incidentID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader(System.Data.CommandBehavior.SingleRow);
+                int incident_ID = reader.GetOrdinal("IncidentID");
+                int customer = reader.GetOrdinal("Customer");
+                int productCode = reader.GetOrdinal("ProductCode");
+                int tech = reader.GetOrdinal("Technician");
+                int dateOpened = reader.GetOrdinal("DateOpened");
+                int title = reader.GetOrdinal("Title");
+                int description = reader.GetOrdinal("Description");
+                if (reader.Read())
+                {
+                    incident.IncidentID = reader.GetInt32(incident_ID);
+                    incident.Customer = reader.GetString(customer);
+                    incident.ProductCode = reader.GetString(productCode);
+                    incident.Technician = reader.GetString(tech);
+                    incident.DateOpened = reader.GetDateTime(dateOpened);
+                    incident.Title = reader.GetString(title);
+                    incident.Description = reader.GetString(description);
+                }
+                else
+                {
+                    incident = null;
+                }
+                reader.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return incident;
+        }
+
+        private static Boolean CheckForTechnician(int incidentID)
+        {
+            bool techPresent = false;
+            SqlConnection connection = IncidentsDBConnection.GetConnection();            
+            string selectTechStatement = "SELECT techID FROM Incidents WHERE IncidentID = @IncidentID";
+            SqlCommand selectTechCommand = new SqlCommand(selectTechStatement, connection);
+            selectTechCommand.Parameters.AddWithValue("@IncidentID", incidentID);
+            connection.Open();
+            SqlDataReader techReader = selectTechCommand.ExecuteReader();
+            if (techReader.Read())
+            {
+                if (techReader.HasRows)
+                {
+                    techPresent = true;
+                }
+                else
+                {
+                    techPresent = false;
+                }
+            }
+            connection.Close();
+            techReader.Close();
+            return techPresent;
+        }
     }
 }
