@@ -65,8 +65,11 @@ namespace TechSupport.DAL
         public static Incident GetIncident(int incidentID)
         {
 
-            // THIS NEEDS THE MOST WORK AS THIS STILL DOESNT BRING IN THE INCIDENTS THAT DONT HAVE A TECH
-            // UNTIL THIS GETS RESOLVED, JUST TEST WITH INCIDENTS THAT DO HAVE A TECH ASSOCIATED WITH IT
+            // I couldn't quite get the technician being null figured out. Many hours were spent trying
+            // to figure out how it can work within the current context but nothing seemed to work. From
+            // my testing, anytime the technician was null, the reader wouldnt even read() and therefore 
+            // everything would be blank if you searched for an incident that didnt have a technician. I
+            // am not sure what could be off
             Incident incident = new Incident();
             SqlConnection connection = IncidentsDBConnection.GetConnection();
             
@@ -89,7 +92,7 @@ namespace TechSupport.DAL
                 int customer = reader.GetOrdinal("Customer");
                 int productCode = reader.GetOrdinal("ProductCode");
                 
-               // int tech = reader.GetOrdinal("Technician");
+                //int tech = reader.GetOrdinal("Technician");
                 int dateOpened = reader.GetOrdinal("DateOpened");
                 int dateClosed = reader.GetOrdinal("DateClosed");
                 int title = reader.GetOrdinal("Title");
@@ -102,6 +105,10 @@ namespace TechSupport.DAL
                     if (reader["Technician"].GetType() != typeof(DBNull))
                     {
                         incident.Technician = reader["Technician"].ToString();
+                    }
+                    else
+                    {
+                        incident.Technician = "";
                     }
                     //incident.Technician = reader.GetString(tech);
                     incident.DateOpened = reader.GetDateTime(dateOpened);

@@ -75,7 +75,7 @@ namespace TechSupport.UserControls
         {
             customerTextBox.Text = incident.Customer;
             productTextBox.Text = incident.ProductCode;
-            if (incident.Technician.Equals(null))
+            if (incident.Technician == "")
             {
                 technicianComboBox.Text = "-- Unassigned --";
             }
