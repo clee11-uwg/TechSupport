@@ -119,29 +119,32 @@ namespace TechSupport.UserControls
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-
-            DialogResult result = MessageBox.Show("Are you sure you want to close this incident? The incident can't be updated once it has been closed.", "Close Incident", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (technicianComboBox.Text != "-- Unassigned --")
             {
-                int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
-                bool isIncidentClosed = this.incidentController.CloseIncident(incidentID);
-                if (isIncidentClosed)
+                DialogResult result = MessageBox.Show("Are you sure you want to close this incident? The incident can't be updated once it has been closed.", "Close Incident", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("The incident has been closed");
-                    GetIncident(incidentID);
+                    int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
+                    bool isIncidentClosed = this.incidentController.CloseIncident(incidentID);
+                    if (isIncidentClosed)
+                    {
+                        MessageBox.Show("The incident has been closed");
+                        GetIncident(incidentID);
+                    }
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("You must assign a technician to your incident before you can close the incident.", "Unable to Close Incident");
+            }           
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            // Only doing logic for the text to add text box for now until i can figure out how to get the technician box to be empty
-            // when the value is null within the database
-            if (textToAddTextBox.Text.Trim() == "")
+            if (textToAddTextBox.Text.Trim() == "" && technicianComboBox.Text == incident.Technician)
             {
                 if (incident.Description.Length < 185)
-                    MessageBox.Show("Please make sure to add text to the Text To Add text box", "Text To Add Field Required");
+                    MessageBox.Show("You must change the technician or add text to the Text To Add text box", "Change Required");
                 else
                     MessageBox.Show("Anything added to the Text To Add text box will result in the description field being over 200 characters long.", "Unable to Add Text");
             }

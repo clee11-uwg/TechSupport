@@ -69,7 +69,7 @@ namespace TechSupport.DAL
             // to figure out how it can work within the current context but nothing seemed to work. From
             // my testing, anytime the technician was null, the reader wouldnt even read() and therefore 
             // everything would be blank if you searched for an incident that didnt have a technician. I
-            // am not sure what could be off
+            // am not sure what could be off 
             Incident incident = new Incident();
             SqlConnection connection = IncidentsDBConnection.GetConnection();
             
@@ -77,7 +77,7 @@ namespace TechSupport.DAL
                 "SELECT IncidentID, c.name as Customer, ProductCode, t.name as Technician, DateOpened, DateClosed, Title, Description " +
                 "FROM incidents i JOIN Customers c ON " +
                 "i.CustomerID = c.CustomerID " +
-                "JOIN Technicians t ON " +
+                "LEFT OUTER JOIN Technicians t ON " +
                 "i.TechID = t.TechID " +
                 "WHERE IncidentID = @IncidentID";
             
