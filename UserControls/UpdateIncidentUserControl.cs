@@ -54,14 +54,30 @@ namespace TechSupport.UserControls
         {
             customerTextBox.Text = incident.Customer;
             productTextBox.Text = incident.ProductCode;
-            if (incident.Technician == null)
+            if (incident.Technician.Equals(null))
             {
-                technicianComboBox.Text = "~~ Unassigned ~~";
+                technicianComboBox.Text = "-- Unassigned --";
+            }
+            else
+            {
+                technicianComboBox.Text = incident.Technician;
             }
             
             titleTextBox.Text = incident.Title;
             dateOpenedTextBox.Text = incident.DateOpened.ToString("MM/dd/yyyy");
             descriptionTextBox.Text = incident.Description;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            incidentIDTextBox.Text = "";
+            customerTextBox.Text = "";
+            productTextBox.Text = "";
+            //tech combo box
+            titleTextBox.Text = "";
+            dateOpenedTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            textToAddTextBox.Text = "";
         }
     }
 }

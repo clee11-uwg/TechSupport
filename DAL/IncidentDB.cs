@@ -57,8 +57,16 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Retrieves the incident that has the incidentID provided
+        /// </summary>
+        /// <param name="incidentID">Incident ID used to retrieve a certain incident</param>
+        /// <returns>Returns incident based on its incidentID</returns>
         public static Incident GetIncident(int incidentID)
         {
+
+            // THIS NEEDS THE MOST WORK AS THIS STILL DOESNT BRING IN THE INCIDENTS THAT DONT HAVE A TECH
+            // UNTIL THIS GETS RESOLVED, JUST TEST WITH INCIDENTS THAT DO HAVE A TECH ASSOCIATED WITH IT
             Incident incident = new Incident();
             SqlConnection connection = IncidentsDBConnection.GetConnection();
             
@@ -80,23 +88,24 @@ namespace TechSupport.DAL
                 int incident_ID = reader.GetOrdinal("IncidentID");
                 int customer = reader.GetOrdinal("Customer");
                 int productCode = reader.GetOrdinal("ProductCode");
-                int tech = reader.GetOrdinal("Technician");
+                
+               // int tech = reader.GetOrdinal("Technician");
                 int dateOpened = reader.GetOrdinal("DateOpened");
                 int title = reader.GetOrdinal("Title");
                 int description = reader.GetOrdinal("Description");
-                if (reader.Read())
+                while (reader.Read())
                 {
                     incident.IncidentID = reader.GetInt32(incident_ID);
                     incident.Customer = reader.GetString(customer);
                     incident.ProductCode = reader.GetString(productCode);
-                    incident.Technician = reader.GetString(tech);
+                    if (reader["Technician"].GetType() != typeof(DBNull))
+                    {
+                        incident.Technician = reader["Technician"].ToString();
+                    }
+                    //incident.Technician = reader.GetString(tech);
                     incident.DateOpened = reader.GetDateTime(dateOpened);
                     incident.Title = reader.GetString(title);
                     incident.Description = reader.GetString(description);
-                }
-                else
-                {
-                    incident = null;
                 }
                 reader.Close();
             }

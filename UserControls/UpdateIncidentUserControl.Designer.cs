@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.incidentIDTableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.incidentIDLabel = new System.Windows.Forms.Label();
             this.incidentIDTextBox = new System.Windows.Forms.TextBox();
+            this.incidentIDLabel = new System.Windows.Forms.Label();
             this.getIncidentButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.prefillTablePayout = new System.Windows.Forms.TableLayoutPanel();
+            this.textToAddTextBox = new System.Windows.Forms.TextBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.customerLabel = new System.Windows.Forms.Label();
             this.customerTextBox = new System.Windows.Forms.TextBox();
             this.productLabel = new System.Windows.Forms.Label();
             this.productTextBox = new System.Windows.Forms.TextBox();
             this.techLabel = new System.Windows.Forms.Label();
             this.technicianComboBox = new System.Windows.Forms.ComboBox();
-            this.titleLabel = new System.Windows.Forms.Label();
             this.dateOpenedLabel = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.textToAddLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.dateOpenedTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.textToAddTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.textToAddLabel = new System.Windows.Forms.Label();
             this.buttonTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.updateButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -76,6 +76,14 @@
             this.incidentIDTableLayout.Size = new System.Drawing.Size(338, 32);
             this.incidentIDTableLayout.TabIndex = 0;
             // 
+            // incidentIDTextBox
+            // 
+            this.incidentIDTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.incidentIDTextBox.Location = new System.Drawing.Point(115, 6);
+            this.incidentIDTextBox.Name = "incidentIDTextBox";
+            this.incidentIDTextBox.Size = new System.Drawing.Size(138, 20);
+            this.incidentIDTextBox.TabIndex = 1;
+            // 
             // incidentIDLabel
             // 
             this.incidentIDLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -86,14 +94,6 @@
             this.incidentIDLabel.Size = new System.Drawing.Size(94, 20);
             this.incidentIDLabel.TabIndex = 0;
             this.incidentIDLabel.Text = "Incident ID:";
-            // 
-            // incidentIDTextBox
-            // 
-            this.incidentIDTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.incidentIDTextBox.Location = new System.Drawing.Point(115, 6);
-            this.incidentIDTextBox.Name = "incidentIDTextBox";
-            this.incidentIDTextBox.Size = new System.Drawing.Size(138, 20);
-            this.incidentIDTextBox.TabIndex = 1;
             // 
             // getIncidentButton
             // 
@@ -122,7 +122,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(753, 446);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 357);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // prefillTablePayout
@@ -156,6 +156,25 @@
             this.prefillTablePayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.prefillTablePayout.Size = new System.Drawing.Size(499, 269);
             this.prefillTablePayout.TabIndex = 1;
+            // 
+            // textToAddTextBox
+            // 
+            this.textToAddTextBox.Location = new System.Drawing.Point(127, 213);
+            this.textToAddTextBox.Multiline = true;
+            this.textToAddTextBox.Name = "textToAddTextBox";
+            this.textToAddTextBox.Size = new System.Drawing.Size(291, 54);
+            this.textToAddTextBox.TabIndex = 13;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(3, 95);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(46, 20);
+            this.titleLabel.TabIndex = 6;
+            this.titleLabel.Text = "Title:";
             // 
             // customerLabel
             // 
@@ -212,17 +231,6 @@
             this.technicianComboBox.Size = new System.Drawing.Size(291, 21);
             this.technicianComboBox.TabIndex = 5;
             // 
-            // titleLabel
-            // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(3, 95);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(46, 20);
-            this.titleLabel.TabIndex = 6;
-            this.titleLabel.Text = "Title:";
-            // 
             // dateOpenedLabel
             // 
             this.dateOpenedLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -233,26 +241,6 @@
             this.dateOpenedLabel.Size = new System.Drawing.Size(113, 20);
             this.dateOpenedLabel.TabIndex = 7;
             this.dateOpenedLabel.Text = "Date Opened:";
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(3, 150);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(100, 20);
-            this.descriptionLabel.TabIndex = 8;
-            this.descriptionLabel.Text = "Description:";
-            // 
-            // textToAddLabel
-            // 
-            this.textToAddLabel.AutoSize = true;
-            this.textToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textToAddLabel.Location = new System.Drawing.Point(3, 210);
-            this.textToAddLabel.Name = "textToAddLabel";
-            this.textToAddLabel.Size = new System.Drawing.Size(104, 20);
-            this.textToAddLabel.TabIndex = 9;
-            this.textToAddLabel.Text = "Text To Add:";
             // 
             // titleTextBox
             // 
@@ -276,13 +264,25 @@
             this.descriptionTextBox.Size = new System.Drawing.Size(291, 54);
             this.descriptionTextBox.TabIndex = 12;
             // 
-            // textToAddTextBox
+            // descriptionLabel
             // 
-            this.textToAddTextBox.Location = new System.Drawing.Point(127, 213);
-            this.textToAddTextBox.Multiline = true;
-            this.textToAddTextBox.Name = "textToAddTextBox";
-            this.textToAddTextBox.Size = new System.Drawing.Size(291, 54);
-            this.textToAddTextBox.TabIndex = 13;
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(3, 150);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(100, 20);
+            this.descriptionLabel.TabIndex = 8;
+            this.descriptionLabel.Text = "Description:";
+            // 
+            // textToAddLabel
+            // 
+            this.textToAddLabel.AutoSize = true;
+            this.textToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textToAddLabel.Location = new System.Drawing.Point(3, 210);
+            this.textToAddLabel.Name = "textToAddLabel";
+            this.textToAddLabel.Size = new System.Drawing.Size(104, 20);
+            this.textToAddLabel.TabIndex = 9;
+            this.textToAddLabel.Text = "Text To Add:";
             // 
             // buttonTableLayout
             // 
@@ -330,6 +330,7 @@
             this.clearButton.TabIndex = 2;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // UpdateIncidentUserControl
             // 
