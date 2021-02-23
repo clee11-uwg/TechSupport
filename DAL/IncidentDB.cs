@@ -71,7 +71,7 @@ namespace TechSupport.DAL
             SqlConnection connection = IncidentsDBConnection.GetConnection();
             
             string selectStatement =
-                "SELECT IncidentID, c.name as Customer, ProductCode, t.name as Technician, DateOpened, Title, Description " +
+                "SELECT IncidentID, c.name as Customer, ProductCode, t.name as Technician, DateOpened, DateClosed, Title, Description " +
                 "FROM incidents i JOIN Customers c ON " +
                 "i.CustomerID = c.CustomerID " +
                 "JOIN Technicians t ON " +
@@ -91,6 +91,7 @@ namespace TechSupport.DAL
                 
                // int tech = reader.GetOrdinal("Technician");
                 int dateOpened = reader.GetOrdinal("DateOpened");
+                int dateClosed = reader.GetOrdinal("DateClosed");
                 int title = reader.GetOrdinal("Title");
                 int description = reader.GetOrdinal("Description");
                 while (reader.Read())
@@ -104,6 +105,15 @@ namespace TechSupport.DAL
                     }
                     //incident.Technician = reader.GetString(tech);
                     incident.DateOpened = reader.GetDateTime(dateOpened);
+                    if (reader["DateClosed"].GetType() != typeof(DBNull))
+                    {
+                        incident.DateClosed = reader.GetDateTime(dateClosed);
+                    }
+                    else
+                    {
+                        incident.DateClosed = Convert.ToDateTime("1/1/0001");
+                    }
+                    
                     incident.Title = reader.GetString(title);
                     incident.Description = reader.GetString(description);
                 }
@@ -153,6 +163,44 @@ namespace TechSupport.DAL
                 connection.Close();
             }
         }
+
+        public static bool UpdateIncident(Incident oldIncident, Incident newIncident)
+        {
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+            string updateStatement =
+                "UPDATE Incidents " +
+                "SET techID = @NewTechID, " +
+                "Description = @NewDescription " +
+                "WHERE IncidentID = @OldIncidentID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@NewTechID", newIncident.TechID);
+            // the 200 character logic for the description to be handled in the same place where this method is called
+            updateCommand.Parameters.AddWithValue("@NewDescription", newIncident.Description);
+            updateCommand.Parameters.AddWithValue("@OldIncidentID", oldIncident.IncidentID);
+
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         private static Boolean CheckForTechnician(int incidentID)
         {
             bool techPresent = false;

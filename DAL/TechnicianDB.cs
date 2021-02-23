@@ -48,5 +48,41 @@ namespace TechSupport.DAL
             }
             return techList;
         }
+
+        public static Technician GetTechnician(int techID)
+        {
+            Technician technician= new Technician();
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+
+            string selectStatement =
+                "SELECT TechID, Name " +
+                "FROM Technicians " +
+                "WHERE TechID = @TechID";
+
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@TechID", techID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader(System.Data.CommandBehavior.SingleRow);
+                int tech_ID = reader.GetOrdinal("TechID");
+                int name = reader.GetOrdinal("Name");
+                while (reader.Read())
+                {
+                    technician.TechID = reader.GetInt32(tech_ID);
+                    technician.Name = reader.GetString(name);
+                }
+                reader.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return technician;
+        }
     }
 }

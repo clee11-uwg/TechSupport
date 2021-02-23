@@ -118,6 +118,18 @@ namespace TechSupport.Controller
             return myCustomerList;
         }
 
+        public bool UpdateIncident(Incident oldIncident, Incident newIncident)
+        {
+            bool isIncidentUpdated = IncidentDB.UpdateIncident(oldIncident, newIncident);
+            return isIncidentUpdated;
+        }
+
+        public Technician GetTechnician(int techID)
+        {
+            Technician technician = TechnicianDB.GetTechnician(techID);
+            return technician;
+        }
+
         /// <summary>
         /// Retrieves a list of products form the database via the ProductDB's GetProductList method
         /// </summary>

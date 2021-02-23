@@ -43,7 +43,7 @@ namespace TechSupport.UserControls
             else
             {
                 incidentID = Convert.ToInt32(incidentIDTextBox.Text.Trim());
-                this.GetIncident(incidentID);
+                this.GetIncident(incidentID);                
             }  
         }
 
@@ -58,8 +58,12 @@ namespace TechSupport.UserControls
                 }
                 else
                 {
-                    this.DisplayIncident();
+                    this.DisplayIncident(incident);
                 }
+            }
+            catch (NullReferenceException nre)
+            {
+                MessageBox.Show("An incident with that IncidentID does not exist. Please try again.", nre.GetType().ToString());
             }
             catch (Exception ex)
             {
@@ -67,7 +71,7 @@ namespace TechSupport.UserControls
             }
         }
 
-        private void DisplayIncident()
+        private void DisplayIncident(Incident incident)
         {
             customerTextBox.Text = incident.Customer;
             productTextBox.Text = incident.ProductCode;
@@ -79,14 +83,21 @@ namespace TechSupport.UserControls
             {
                 technicianComboBox.Text = incident.Technician;
             }
-            
+            if (incident.DateClosed > DateTime.MinValue)
+            {
+                textToAddTextBox.Enabled = false;
+                updateButton.Enabled = false;
+                closeButton.Enabled = false;
+            }
+            else
+            {
+                updateButton.Enabled = true;
+                closeButton.Enabled = true;
+                textToAddTextBox.Enabled = true;
+            }
             titleTextBox.Text = incident.Title;
             dateOpenedTextBox.Text = incident.DateOpened.ToString("MM/dd/yyyy");
-            descriptionTextBox.Text = incident.Description;
-
-            updateButton.Enabled = true;
-            closeButton.Enabled = true;
-            textToAddTextBox.Enabled = true;
+            descriptionTextBox.Text = incident.Description;          
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -109,7 +120,7 @@ namespace TechSupport.UserControls
         private void CloseButton_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Are you sure you want to close this incident?", "Close Incident", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to close this incident? The incident can't be updated once it has been closed.", "Close Incident", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
@@ -117,6 +128,7 @@ namespace TechSupport.UserControls
                 if (isIncidentClosed)
                 {
                     MessageBox.Show("The incident has been closed");
+                    GetIncident(incidentID);
                 }
             }
             
@@ -128,7 +140,53 @@ namespace TechSupport.UserControls
             // when the value is null within the database
             if (textToAddTextBox.Text.Trim() == "")
             {
-                MessageBox.Show("Please make sure to add text to the Text To Add text box", "Text To Add Field Required");
+                if (incident.Description.Length < 185)
+                    MessageBox.Show("Please make sure to add text to the Text To Add text box", "Text To Add Field Required");
+                else
+                    MessageBox.Show("Anything added to the Text To Add text box will result in the description field being over 200 characters long.", "Unable to Add Text");
+            }
+            else
+            {
+                Incident newIncident = new Incident();
+                newIncident.IncidentID = Convert.ToInt32(incidentIDTextBox.Text.Trim());
+                newIncident.Customer = incident.Customer;
+                newIncident.ProductCode = incident.ProductCode;
+                newIncident.TechID = Convert.ToInt32(technicianComboBox.SelectedValue);
+                Technician technician = this.incidentController.GetTechnician(newIncident.TechID);
+                newIncident.Technician = technician.Name;
+                newIncident.Title = incident.Title;
+                newIncident.DateOpened = incident.DateOpened;
+                try
+                {
+                    if (incident.Description.Length >= 200)
+                    {
+                        throw new Exception("Description already contains 200 characters. No more can be added");
+                    }
+                    else
+                    {
+                        string newDescription = descriptionTextBox.Text + Environment.NewLine + Environment.NewLine + "<" + DateTime.Now.ToString("MM/dd/yyyy") + ">" + "\t " + textToAddTextBox.Text.Trim();
+                        if (newDescription.Length >= 200)
+                        {
+                            textToAddTextBox.Text = "";
+                            throw new Exception("The value entered into the Text To Add field put the description field over 200 characters and therefore was not added");                            
+                        }
+                        else
+                        {
+                            newIncident.Description = newDescription;
+                        }
+                    }                
+                    bool isIncidentUpdated = this.incidentController.UpdateIncident(incident, newIncident);
+                    if (isIncidentUpdated)
+                    {
+                        MessageBox.Show("Incident has been updated", "Successfully Updated!");
+                        DisplayIncident(newIncident);
+                        textToAddTextBox.Text = "";
+                    }
+                }                
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
         }
     }

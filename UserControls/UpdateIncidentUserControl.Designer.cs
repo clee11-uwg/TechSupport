@@ -262,6 +262,7 @@
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTextBox.Location = new System.Drawing.Point(127, 153);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
