@@ -23,6 +23,15 @@ namespace TechSupport.UserControls
             this.incidentController = new IncidentController();
         }
 
+        public void ResetTechComboBox()
+        {
+            List<Technician> techList;
+            techList = this.incidentController.GetTechnicianList();
+            technicianComboBox.DataSource = techList;
+            technicianComboBox.DisplayMember = "Name";
+            technicianComboBox.ValueMember = "TechID";
+        }
+
         private void GetIncidentButton_Click(object sender, EventArgs e)
         {
             // Add if statement to see if incident id entered is a number and if it exists in the database
@@ -73,7 +82,7 @@ namespace TechSupport.UserControls
             incidentIDTextBox.Text = "";
             customerTextBox.Text = "";
             productTextBox.Text = "";
-            //tech combo box
+            ResetTechComboBox();
             titleTextBox.Text = "";
             dateOpenedTextBox.Text = "";
             descriptionTextBox.Text = "";

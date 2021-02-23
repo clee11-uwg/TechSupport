@@ -24,13 +24,17 @@ namespace TechSupport.View
 
         private void DashboardTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dashboardTabControl.SelectedTab.Text == "Add Incident")
+            if (dashboardTabControl.SelectedTab.Text == "Add")
             {
                 this.addIncidentUserControl1.ResetAddIncidentForm();
             }
             if (dashboardTabControl.SelectedTab.Text == "Display Open Incidents")
             {
                 this.displayOpenIncidentsUserControl1.PopulateListView();
+            }
+            if (dashboardTabControl.SelectedTab.Text == "Update")
+            {
+                this.updateIncidentUserControl1.ResetTechComboBox();
             }
         }
 

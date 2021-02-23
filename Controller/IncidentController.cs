@@ -90,9 +90,21 @@ namespace TechSupport.Controller
             return incident;
         }
 
+        /// <summary>
+        /// Closes incident
+        /// </summary>
+        /// <param name="incidentID"></param>
+        /// <returns>Returns either true or false if the incident has been closed</returns>
         public bool CloseIncident(int incidentID)
         {
             return IncidentDB.CloseIncident(incidentID);
+        }
+
+        public List<Technician> GetTechnicianList()
+        {
+            List<Technician> myTechList;
+            myTechList = TechnicianDB.GetTechnicianList();
+            return myTechList;
         }
 
         /// <summary>
