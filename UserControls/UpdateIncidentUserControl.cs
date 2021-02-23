@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -23,6 +17,9 @@ namespace TechSupport.UserControls
             this.incidentController = new IncidentController();
         }
 
+        /// <summary>
+        /// Resets the Technician Combo Box
+        /// </summary>
         public void ResetTechComboBox()
         {
             List<Technician> techList;
@@ -34,9 +31,19 @@ namespace TechSupport.UserControls
 
         private void GetIncidentButton_Click(object sender, EventArgs e)
         {
-            // Add if statement to see if incident id entered is a number and if it exists in the database
-            int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
-            this.GetIncident(incidentID);
+            int incidentID;
+            if (incidentIDTextBox.Text.Trim() == "" || !int.TryParse(incidentIDTextBox.Text.Trim(), out _))
+            {
+                MessageBox.Show("Incident ID is not a valid number. Please try again", "Invalid Incident ID");
+                ResetAllFields();
+            }
+            else
+            {
+                incidentID = Convert.ToInt32(incidentIDTextBox.Text.Trim());
+                this.GetIncident(incidentID);
+            }
+            
+            
         }
 
         private void GetIncident(int incidentID)
@@ -79,6 +86,11 @@ namespace TechSupport.UserControls
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            ResetAllFields();
+        }
+
+        private void ResetAllFields()
+        {
             incidentIDTextBox.Text = "";
             customerTextBox.Text = "";
             productTextBox.Text = "";
@@ -91,6 +103,7 @@ namespace TechSupport.UserControls
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
+
             DialogResult result = MessageBox.Show("Are you sure you want to close this incident?", "Close Incident", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -102,6 +115,11 @@ namespace TechSupport.UserControls
                 }
             }
             
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
