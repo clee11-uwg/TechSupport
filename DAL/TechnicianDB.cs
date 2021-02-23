@@ -49,6 +49,11 @@ namespace TechSupport.DAL
             return techList;
         }
 
+        /// <summary>
+        /// Retrieves specific tech based on its ID passed in
+        /// </summary>
+        /// <param name="techID">Used to find the correct technician</param>
+        /// <returns>Returns technician based on its techID</returns>
         public static Technician GetTechnician(int techID)
         {
             Technician technician= new Technician();

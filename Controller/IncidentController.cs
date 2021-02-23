@@ -100,6 +100,10 @@ namespace TechSupport.Controller
             return IncidentDB.CloseIncident(incidentID);
         }
 
+        /// <summary>
+        /// Retrieves list of technicians
+        /// </summary>
+        /// <returns>Returns list of technicians</returns>
         public List<Technician> GetTechnicianList()
         {
             List<Technician> myTechList;
@@ -118,12 +122,23 @@ namespace TechSupport.Controller
             return myCustomerList;
         }
 
+        /// <summary>
+        /// Returns whether or not the incident was updated successfully
+        /// </summary>
+        /// <param name="oldIncident">Old incident as a reference</param>
+        /// <param name="newIncident">new reference used to populate fields</param>
+        /// <returns>Returns true or false depending on if the incident was properly updated</returns>
         public bool UpdateIncident(Incident oldIncident, Incident newIncident)
         {
             bool isIncidentUpdated = IncidentDB.UpdateIncident(oldIncident, newIncident);
             return isIncidentUpdated;
         }
 
+        /// <summary>
+        /// Retrieves specific tech based on its ID passed in
+        /// </summary>
+        /// <param name="techID">Used to find the correct technician</param>
+        /// <returns>Returns technician based on its techID</returns>
         public Technician GetTechnician(int techID)
         {
             Technician technician = TechnicianDB.GetTechnician(techID);

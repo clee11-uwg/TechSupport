@@ -130,6 +130,11 @@ namespace TechSupport.DAL
             return incident;
         }
 
+        /// <summary>
+        /// Returns if the incident has been closed successfully
+        /// </summary>
+        /// <param name="incidentID">ID of the incident to be closed</param>
+        /// <returns>Returns true or false if the incident was properly closed</returns>
         public static bool CloseIncident(int incidentID)
         {
             SqlConnection connection = IncidentsDBConnection.GetConnection();
@@ -164,6 +169,12 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Returns whether or not the incident was updated successfully
+        /// </summary>
+        /// <param name="oldIncident">Old incident as a reference</param>
+        /// <param name="newIncident">new reference used to populate fields</param>
+        /// <returns>Returns true or false depending on if the incident was properly updated</returns>
         public static bool UpdateIncident(Incident oldIncident, Incident newIncident)
         {
             SqlConnection connection = IncidentsDBConnection.GetConnection();
@@ -199,31 +210,6 @@ namespace TechSupport.DAL
             {
                 connection.Close();
             }
-        }
-
-        private static Boolean CheckForTechnician(int incidentID)
-        {
-            bool techPresent = false;
-            SqlConnection connection = IncidentsDBConnection.GetConnection();            
-            string selectTechStatement = "SELECT techID FROM Incidents WHERE IncidentID = @IncidentID";
-            SqlCommand selectTechCommand = new SqlCommand(selectTechStatement, connection);
-            selectTechCommand.Parameters.AddWithValue("@IncidentID", incidentID);
-            connection.Open();
-            SqlDataReader techReader = selectTechCommand.ExecuteReader();
-            if (techReader.Read())
-            {
-                if (techReader.HasRows)
-                {
-                    techPresent = true;
-                }
-                else
-                {
-                    techPresent = false;
-                }
-            }
-            connection.Close();
-            techReader.Close();
-            return techPresent;
         }
     }
 }
