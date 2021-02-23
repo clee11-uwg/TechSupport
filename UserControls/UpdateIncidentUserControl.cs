@@ -79,5 +79,20 @@ namespace TechSupport.UserControls
             descriptionTextBox.Text = "";
             textToAddTextBox.Text = "";
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to close this incident?", "Close Incident", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
+                bool isIncidentClosed = this.incidentController.CloseIncident(incidentID);
+                if (isIncidentClosed)
+                {
+                    MessageBox.Show("The incident has been closed");
+                }
+            }
+            
+        }
     }
 }

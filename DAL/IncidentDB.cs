@@ -120,6 +120,39 @@ namespace TechSupport.DAL
             return incident;
         }
 
+        public static bool CloseIncident(int incidentID)
+        {
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+            string updateStatement = 
+                "UPDATE Incidents " +
+                "SET DateClosed = @DateClosed " +
+                "WHERE IncidentID = @IncidentID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@DateClosed", DateTime.Now);
+            updateCommand.Parameters.AddWithValue("@IncidentID", incidentID);
+
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         private static Boolean CheckForTechnician(int incidentID)
         {
             bool techPresent = false;

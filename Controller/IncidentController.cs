@@ -90,6 +90,11 @@ namespace TechSupport.Controller
             return incident;
         }
 
+        public bool CloseIncident(int incidentID)
+        {
+            return IncidentDB.CloseIncident(incidentID);
+        }
+
         /// <summary>
         /// Retrieves a list of customers from the database via the CustomerDB's GetCustomerList method
         /// </summary>
