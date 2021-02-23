@@ -191,6 +191,7 @@
             // 
             this.customerTextBox.Location = new System.Drawing.Point(127, 3);
             this.customerTextBox.Name = "customerTextBox";
+            this.customerTextBox.ReadOnly = true;
             this.customerTextBox.Size = new System.Drawing.Size(291, 20);
             this.customerTextBox.TabIndex = 1;
             // 
@@ -209,6 +210,7 @@
             // 
             this.productTextBox.Location = new System.Drawing.Point(127, 33);
             this.productTextBox.Name = "productTextBox";
+            this.productTextBox.ReadOnly = true;
             this.productTextBox.Size = new System.Drawing.Size(291, 20);
             this.productTextBox.TabIndex = 3;
             // 
@@ -246,6 +248,7 @@
             // 
             this.titleTextBox.Location = new System.Drawing.Point(127, 93);
             this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ReadOnly = true;
             this.titleTextBox.Size = new System.Drawing.Size(291, 20);
             this.titleTextBox.TabIndex = 10;
             // 
@@ -253,6 +256,7 @@
             // 
             this.dateOpenedTextBox.Location = new System.Drawing.Point(127, 123);
             this.dateOpenedTextBox.Name = "dateOpenedTextBox";
+            this.dateOpenedTextBox.ReadOnly = true;
             this.dateOpenedTextBox.Size = new System.Drawing.Size(143, 20);
             this.dateOpenedTextBox.TabIndex = 11;
             // 
@@ -261,6 +265,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(127, 153);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ReadOnly = true;
             this.descriptionTextBox.Size = new System.Drawing.Size(291, 54);
             this.descriptionTextBox.TabIndex = 12;
             // 

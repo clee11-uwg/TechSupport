@@ -15,6 +15,9 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             this.incidentController = new IncidentController();
+            updateButton.Enabled = false;
+            closeButton.Enabled = false;
+            textToAddTextBox.Enabled = false;
         }
 
         /// <summary>
@@ -41,9 +44,7 @@ namespace TechSupport.UserControls
             {
                 incidentID = Convert.ToInt32(incidentIDTextBox.Text.Trim());
                 this.GetIncident(incidentID);
-            }
-            
-            
+            }  
         }
 
         private void GetIncident(int incidentID)
@@ -82,6 +83,10 @@ namespace TechSupport.UserControls
             titleTextBox.Text = incident.Title;
             dateOpenedTextBox.Text = incident.DateOpened.ToString("MM/dd/yyyy");
             descriptionTextBox.Text = incident.Description;
+
+            updateButton.Enabled = true;
+            closeButton.Enabled = true;
+            textToAddTextBox.Enabled = true;
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -119,7 +124,12 @@ namespace TechSupport.UserControls
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-
+            // Only doing logic for the text to add text box for now until i can figure out how to get the technician box to be empty
+            // when the value is null within the database
+            if (textToAddTextBox.Text.Trim() == "")
+            {
+                MessageBox.Show("Please make sure to add text to the Text To Add text box", "Text To Add Field Required");
+            }
         }
     }
 }
