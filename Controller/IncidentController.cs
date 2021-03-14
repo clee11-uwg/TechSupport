@@ -123,6 +123,18 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Retrieves list of incidents for a certain technician
+        /// </summary>
+        /// <param name="techID">Technician to show incidents for</param>
+        /// <returns>Returns list of incidents for a certain technician</returns>
+        public List<Incident> GetIncidentsForTech(int techID)
+        {
+            List<Incident> myIncidentList;
+            myIncidentList = IncidentDB.GetTechniciansWithIncidents();
+            return myIncidentList;
+        }
+
+        /// <summary>
         /// Retrieves a list of customers from the database via the CustomerDB's GetCustomerList method
         /// </summary>
         /// <returns>Returns a list of customers from the database</returns>

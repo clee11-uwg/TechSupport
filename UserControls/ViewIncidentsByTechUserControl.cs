@@ -10,6 +10,7 @@ namespace TechSupport.UserControls
     {
         private readonly IncidentController incidentController;
         private List<Technician> techList;
+        private List<Incident> incidentList;
 
         public ViewIncidentsByTechUserControl()
         {
@@ -17,14 +18,12 @@ namespace TechSupport.UserControls
             this.incidentController = new IncidentController();
         }
 
-        public void ResetTechnician()
-        {
-            
-        }
-
         private void NameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (nameComboBox.SelectedIndex < 0)
+            {
+                return;
+            }
             Technician technician = techList[nameComboBox.SelectedIndex];
 
             technicianBindingSource.Clear();
@@ -35,6 +34,21 @@ namespace TechSupport.UserControls
         {
             techList = incidentController.GetTechniciansWithIncidents();
             nameComboBox.DataSource = techList;
+            this.GetIncidentsForTech();
+        }
+
+        private void GetIncidentsForTech()
+        {
+            int techID = (int)nameComboBox.SelectedValue;
+            try
+            {
+                incidentList = incidentController.GetIncidentsForTech(techID);
+                incidentDataGridView.DataSource = incidentList;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }

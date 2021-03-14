@@ -36,10 +36,18 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.nameComboBox = new System.Windows.Forms.ComboBox();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.incidentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             emailLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // emailLabel
@@ -104,11 +112,61 @@
             this.phoneTextBox.Size = new System.Drawing.Size(122, 20);
             this.phoneTextBox.TabIndex = 3;
             // 
+            // incidentBindingSource
+            // 
+            this.incidentBindingSource.DataSource = typeof(TechSupport.Model.Incident);
+            // 
+            // incidentDataGridView
+            // 
+            this.incidentDataGridView.AllowUserToAddRows = false;
+            this.incidentDataGridView.AllowUserToDeleteRows = false;
+            this.incidentDataGridView.AutoGenerateColumns = false;
+            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productName,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn1});
+            this.incidentDataGridView.DataSource = this.incidentBindingSource;
+            this.incidentDataGridView.Location = new System.Drawing.Point(6, 110);
+            this.incidentDataGridView.Name = "incidentDataGridView";
+            this.incidentDataGridView.ReadOnly = true;
+            this.incidentDataGridView.Size = new System.Drawing.Size(558, 220);
+            this.incidentDataGridView.TabIndex = 6;
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Product";
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "DateOpened";
+            this.dataGridViewTextBoxColumn9.HeaderText = "DateOpened";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Customer";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Customer";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // ViewIncidentsByTechUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.incidentDataGridView);
             this.Controls.Add(emailLabel);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(nameLabel);
@@ -116,9 +174,11 @@
             this.Controls.Add(phoneLabel);
             this.Controls.Add(this.phoneTextBox);
             this.Name = "ViewIncidentsByTechUserControl";
-            this.Size = new System.Drawing.Size(350, 289);
+            this.Size = new System.Drawing.Size(567, 393);
             this.Load += new System.EventHandler(this.ViewIncidentsByTechUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +190,11 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.ComboBox nameComboBox;
         private System.Windows.Forms.TextBox phoneTextBox;
+        private System.Windows.Forms.BindingSource incidentBindingSource;
+        private System.Windows.Forms.DataGridView incidentDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
