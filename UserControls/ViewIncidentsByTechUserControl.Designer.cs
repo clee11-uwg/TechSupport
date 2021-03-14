@@ -136,9 +136,11 @@
             // 
             // productName
             // 
+            this.productName.DataPropertyName = "Product";
             this.productName.HeaderText = "Product";
             this.productName.Name = "productName";
             this.productName.ReadOnly = true;
+            this.productName.Width = 270;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -146,6 +148,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "DateOpened";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 150;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -153,6 +156,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Customer";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -160,6 +164,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Title";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
             // 
             // ViewIncidentsByTechUserControl
             // 

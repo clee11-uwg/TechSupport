@@ -130,7 +130,7 @@ namespace TechSupport.Controller
         public List<Incident> GetIncidentsForTech(int techID)
         {
             List<Incident> myIncidentList;
-            myIncidentList = IncidentDB.GetTechniciansWithIncidents();
+            myIncidentList = IncidentDB.GetIncidentsForTech(techID);
             return myIncidentList;
         }
 

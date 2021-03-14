@@ -36,10 +36,10 @@
             this.updateIncidentTabPage = new System.Windows.Forms.TabPage();
             this.updateIncidentUserControl1 = new TechSupport.UserControls.UpdateIncidentUserControl();
             this.viewIncidentByTechTabPage = new System.Windows.Forms.TabPage();
+            this.viewIncidentsByTechUserControl1 = new TechSupport.UserControls.ViewIncidentsByTechUserControl();
             this.lnkLblLogout = new System.Windows.Forms.LinkLabel();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.viewIncidentsByTechUserControl1 = new TechSupport.UserControls.ViewIncidentsByTechUserControl();
             this.dashboardTabControl.SuspendLayout();
             this.displayOpenIncidentsTabPage.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
@@ -129,6 +129,15 @@
             this.viewIncidentByTechTabPage.Text = "View Incidents by Technician";
             this.viewIncidentByTechTabPage.UseVisualStyleBackColor = true;
             // 
+            // viewIncidentsByTechUserControl1
+            // 
+            this.viewIncidentsByTechUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.viewIncidentsByTechUserControl1.Location = new System.Drawing.Point(6, 17);
+            this.viewIncidentsByTechUserControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.viewIncidentsByTechUserControl1.Name = "viewIncidentsByTechUserControl1";
+            this.viewIncidentsByTechUserControl1.Size = new System.Drawing.Size(899, 586);
+            this.viewIncidentsByTechUserControl1.TabIndex = 0;
+            // 
             // lnkLblLogout
             // 
             this.lnkLblLogout.AutoSize = true;
@@ -149,15 +158,6 @@
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(0, 22);
             this.usernameLabel.TabIndex = 3;
-            // 
-            // viewIncidentsByTechUserControl1
-            // 
-            this.viewIncidentsByTechUserControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.viewIncidentsByTechUserControl1.Location = new System.Drawing.Point(20, 17);
-            this.viewIncidentsByTechUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.viewIncidentsByTechUserControl1.Name = "viewIncidentsByTechUserControl1";
-            this.viewIncidentsByTechUserControl1.Size = new System.Drawing.Size(695, 289);
-            this.viewIncidentsByTechUserControl1.TabIndex = 0;
             // 
             // MainDashboard
             // 

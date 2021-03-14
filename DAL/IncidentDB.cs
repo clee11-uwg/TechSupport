@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -135,6 +136,58 @@ namespace TechSupport.DAL
                 connection.Close();
             }
             return incident;
+        }
+
+        /// <summary>
+        /// Retrieves list of incidents for a certain technician
+        /// </summary>
+        /// <param name="techID">TechID used to retrieve a lsit of incidents for that tech</param>
+        /// <returns>Returns list of incidents for a certain technician</returns>
+        public static List<Incident> GetIncidentsForTech(int techID)
+        {
+            List<Incident> myIncidents = new List<Incident>();
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+
+            string selectStatement =
+                "SELECT p.Name AS Product, i.DateOpened, c.Name AS Customer, i.Title " +
+                "FROM Incidents i JOIN Products p ON " +
+                "i.ProductCode = p.ProductCode " +
+                "JOIN Customers c ON " +
+                "i.CustomerID = c.CustomerID " +
+                "WHERE techID = @TechID " +
+                "AND i.DateClosed IS NULL";
+
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@TechID", techID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader();
+                int product = reader.GetOrdinal("Product");
+                int dateOpened = reader.GetOrdinal("DateOpened");
+                int customer = reader.GetOrdinal("Customer");
+                int title = reader.GetOrdinal("Title");
+                while (reader.Read())
+                {
+                    Incident incident = new Incident();
+                    incident.Customer = reader.GetString(customer);
+                    incident.Product = reader.GetString(product);
+                    incident.DateOpened = reader.GetDateTime(dateOpened).Date;
+                    incident.Title = reader.GetString(title);
+                    myIncidents.Add(incident);
+                }
+                reader.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return myIncidents;
         }
 
         /// <summary>

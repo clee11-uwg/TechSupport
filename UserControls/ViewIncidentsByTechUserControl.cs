@@ -28,18 +28,17 @@ namespace TechSupport.UserControls
 
             technicianBindingSource.Clear();
             technicianBindingSource.Add(technician);
+            this.GetIncidentsForTech(technician.TechID);
         }
 
         private void ViewIncidentsByTechUserControl_Load(object sender, EventArgs e)
         {
             techList = incidentController.GetTechniciansWithIncidents();
             nameComboBox.DataSource = techList;
-            this.GetIncidentsForTech();
         }
 
-        private void GetIncidentsForTech()
+        private void GetIncidentsForTech(int techID)
         {
-            int techID = (int)nameComboBox.SelectedValue;
             try
             {
                 incidentList = incidentController.GetIncidentsForTech(techID);
