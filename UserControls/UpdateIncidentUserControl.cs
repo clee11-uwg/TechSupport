@@ -52,7 +52,7 @@ namespace TechSupport.UserControls
             try
             {
                 incident = this.incidentController.GetIncident(incidentID);
-                if (incident == null)
+                if (incident.IncidentID == 0)
                 {
                     MessageBox.Show("No incident found with this ID." + "Please try again", "Incident Not Found");
                 }
