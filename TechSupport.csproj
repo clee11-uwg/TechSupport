@@ -90,6 +90,12 @@
     <Compile Include="UserControls\UpdateIncidentUserControl.Designer.cs">
       <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ViewIncidentsByTechUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ViewIncidentsByTechUserControl.Designer.cs">
+      <DependentUpon>ViewIncidentsByTechUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddIncidentDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <EmbeddedResource Include="UserControls\UpdateIncidentUserControl.resx">
       <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ViewIncidentsByTechUserControl.resx">
+      <DependentUpon>ViewIncidentsByTechUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddIncidentDialog.resx">
       <DependentUpon>AddIncidentDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +168,7 @@
     <EmbeddedResource Include="View\SearchIncidentDialog.resx">
       <DependentUpon>SearchIncidentDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\TechSupport.Model.Technician.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

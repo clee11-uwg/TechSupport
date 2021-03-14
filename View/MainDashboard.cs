@@ -36,6 +36,10 @@ namespace TechSupport.View
             {
                 this.updateIncidentUserControl1.ResetTechComboBox();
             }
+            if (dashboardTabControl.SelectedTab.Text == "View Incidents by Technician")
+            {
+                this.viewIncidentsByTechUserControl1.ResetTechnician();
+            }
         }
 
         private void LnkLblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

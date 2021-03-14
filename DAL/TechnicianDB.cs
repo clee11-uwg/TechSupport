@@ -50,6 +50,49 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
+        /// Retrieves a list of techs from the database that have incidents
+        /// </summary>
+        /// <returns>Returns a list of Technician objects based on what is returned from the database</returns>
+        public static List<Technician> GetTechniciansWithIncidents()
+        {
+            List<Technician> techList = new List<Technician>();
+            string selectStatement = "SELECT * FROM Technicians WHERE techID IN (SELECT techID FROM incidents); ";
+
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader();
+                int techID = reader.GetOrdinal("TechID");
+                int techName = reader.GetOrdinal("Name");
+                int techEmail = reader.GetOrdinal("Email");
+                int techPhone = reader.GetOrdinal("Phone");
+                while (reader.Read())
+                {
+                    Technician tech = new Technician();
+                    tech.TechID = reader.GetInt32(techID);
+                    tech.Name = reader.GetString(techName);
+                    tech.Email = reader.GetString(techEmail);
+                    tech.Phone = reader.GetString(techPhone);
+                    techList.Add(tech);
+                }
+                reader.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return techList;
+        }
+
+        /// <summary>
         /// Retrieves specific tech based on its ID passed in
         /// </summary>
         /// <param name="techID">Used to find the correct technician</param>

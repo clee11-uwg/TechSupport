@@ -112,6 +112,17 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Retrieves list of technicians that have incidents
+        /// </summary>
+        /// <returns>Returns list of technicians that have incidents</returns>
+        public List<Technician> GetTechniciansWithIncidents()
+        {
+            List<Technician> myTechList;
+            myTechList = TechnicianDB.GetTechniciansWithIncidents();
+            return myTechList;
+        }
+
+        /// <summary>
         /// Retrieves a list of customers from the database via the CustomerDB's GetCustomerList method
         /// </summary>
         /// <returns>Returns a list of customers from the database</returns>
