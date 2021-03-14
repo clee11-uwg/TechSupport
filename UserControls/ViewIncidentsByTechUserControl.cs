@@ -19,8 +19,7 @@ namespace TechSupport.UserControls
 
         public void ResetTechnician()
         {
-            techList = incidentController.GetTechniciansWithIncidents();
-            nameComboBox.DataSource = techList;
+            
         }
 
         private void NameComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,6 +29,12 @@ namespace TechSupport.UserControls
 
             technicianBindingSource.Clear();
             technicianBindingSource.Add(technician);
+        }
+
+        private void ViewIncidentsByTechUserControl_Load(object sender, EventArgs e)
+        {
+            techList = incidentController.GetTechniciansWithIncidents();
+            nameComboBox.DataSource = techList;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace TechSupport.View
             }
             if (dashboardTabControl.SelectedTab.Text == "View Incidents by Technician")
             {
-                this.viewIncidentsByTechUserControl1.ResetTechnician();
+                //this.viewIncidentsByTechUserControl1.ResetTechnician();
             }
         }
 

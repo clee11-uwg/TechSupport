@@ -117,6 +117,7 @@
             this.Controls.Add(this.phoneTextBox);
             this.Name = "ViewIncidentsByTechUserControl";
             this.Size = new System.Drawing.Size(350, 289);
+            this.Load += new System.EventHandler(this.ViewIncidentsByTechUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
