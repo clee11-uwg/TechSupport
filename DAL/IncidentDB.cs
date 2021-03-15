@@ -109,7 +109,7 @@ namespace TechSupport.DAL
                     }
                     else
                     {
-                        incident.Technician = "";
+                        incident.Technician = DBNull.Value.ToString();
                     }
                     //incident.Technician = reader.GetString(tech);
                     incident.DateOpened = reader.GetDateTime(dateOpened);
@@ -243,9 +243,10 @@ namespace TechSupport.DAL
                 "SET techID = @NewTechID, " +
                 "Description = @NewDescription " +
                 "WHERE IncidentID = @OldIncidentID";
+            
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@NewTechID", newIncident.TechID);
-            // the 200 character logic for the description to be handled in the same place where this method is called
+             // the 200 character logic for the description to be handled in the same place where this method is called
             updateCommand.Parameters.AddWithValue("@NewDescription", newIncident.Description);
             updateCommand.Parameters.AddWithValue("@OldIncidentID", oldIncident.IncidentID);
 

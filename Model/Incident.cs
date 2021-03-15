@@ -16,7 +16,7 @@ namespace TechSupport.Model
         public int CustomerID { get; set; }
 
         public string Technician { get; set; }
-        public int TechID { get; set; }
+        public int? TechID { get; set; }
         public int IncidentID { get; set; }
         public string ProductCode { get; set; }
         public DateTime DateOpened { get; set; }

@@ -75,8 +75,9 @@ namespace TechSupport.UserControls
         {
             customerTextBox.Text = incident.Customer;
             productTextBox.Text = incident.ProductCode;
-            if (incident.Technician == "")
+            if (incident.Technician == DBNull.Value.ToString())
             {
+                technicianComboBox.SelectedIndex = -1;
                 technicianComboBox.Text = "-- Unassigned --";
             }
             else
@@ -141,21 +142,29 @@ namespace TechSupport.UserControls
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (textToAddTextBox.Text.Trim() == "" && technicianComboBox.Text == incident.Technician)
+            if (textToAddTextBox.Text.Trim() == "")
             {
                 if (incident.Description.Length < 185)
-                    MessageBox.Show("You must change the technician or add text to the Text To Add text box", "Change Required");
+                    MessageBox.Show("You must add text to the Text To Add text box", "Change Required");
                 else
                     MessageBox.Show("Anything added to the Text To Add text box will result in the description field being over 200 characters long.", "Unable to Add Text");
             }
             else
             {
                 Incident newIncident = new Incident();
+                bool isIncidentUpdated = false;
                 newIncident.IncidentID = Convert.ToInt32(incidentIDTextBox.Text.Trim());
                 newIncident.Customer = incident.Customer;
                 newIncident.ProductCode = incident.ProductCode;
-                newIncident.TechID = Convert.ToInt32(technicianComboBox.SelectedValue);
-                Technician technician = this.incidentController.GetTechnician(newIncident.TechID);
+                if (technicianComboBox.SelectedValue == null)
+                {
+                    newIncident.TechID = null;
+                }
+                else
+                {
+                    newIncident.TechID = Convert.ToInt32(technicianComboBox.SelectedValue);
+                }                
+                Technician technician = this.incidentController.GetTechnician(Convert.ToInt32(newIncident.TechID));
                 newIncident.Technician = technician.Name;
                 newIncident.Title = incident.Title;
                 newIncident.DateOpened = incident.DateOpened;
@@ -178,7 +187,15 @@ namespace TechSupport.UserControls
                             newIncident.Description = newDescription;
                         }
                     }                
-                    bool isIncidentUpdated = this.incidentController.UpdateIncident(incident, newIncident);
+                    if (incident.TechID == newIncident.TechID || newIncident.TechID == null)
+                    {
+                        MessageBox.Show("Technician needs to be updated");
+                    }
+                    else
+                    {
+                        isIncidentUpdated = this.incidentController.UpdateIncident(incident, newIncident);
+                    }
+                    
                     if (isIncidentUpdated)
                     {
                         MessageBox.Show("Incident has been updated", "Successfully Updated!");
