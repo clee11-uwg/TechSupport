@@ -30,6 +30,8 @@ namespace TechSupport.UserControls
             technicianComboBox.DataSource = techList;
             technicianComboBox.DisplayMember = "Name";
             technicianComboBox.ValueMember = "TechID";
+            technicianComboBox.SelectedIndex = -1;
+            technicianComboBox.Text = "-- Unassigned --";
         }
 
         private void GetIncidentButton_Click(object sender, EventArgs e)
