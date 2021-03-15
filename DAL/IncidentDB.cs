@@ -242,13 +242,15 @@ namespace TechSupport.DAL
                 "UPDATE Incidents " +
                 "SET techID = @NewTechID, " +
                 "Description = @NewDescription " +
-                "WHERE IncidentID = @OldIncidentID";
+                "WHERE IncidentID = @OldIncidentID " +
+                "AND Description = @OldDescription";
             
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@NewTechID", newIncident.TechID);
              // the 200 character logic for the description to be handled in the same place where this method is called
             updateCommand.Parameters.AddWithValue("@NewDescription", newIncident.Description);
             updateCommand.Parameters.AddWithValue("@OldIncidentID", oldIncident.IncidentID);
+            updateCommand.Parameters.AddWithValue("@OldDescription", oldIncident.Description);
 
             try
             {

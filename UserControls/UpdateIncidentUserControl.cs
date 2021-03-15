@@ -204,6 +204,16 @@ namespace TechSupport.UserControls
                         DisplayIncident(newIncident);
                         textToAddTextBox.Text = "";
                     }
+                    else
+                    {
+                        // It seems like it takes a min for the program to realize that something has changed. 
+                        // When testing, I would get a certain ID, add some text to the Text to Add field, click update and everything would be fine.
+                        // Then I would go into the database and updated the description for this incident back to its original value.
+                        // Then I'd go back to the program and try to enter in some text within the Text to Add field but it would say Incident Updated.
+                        // I'd repeat these steps only this time, I wait a few moments before clicking update button after changing value in the database and it worked as expected.
+                        // I am not sure if my testing methods were consistent or not or if there really was some lag time when I was testing.
+                        MessageBox.Show("Parts of the incident have been changed since your last retrieval and therefore is unable to update", "Unable to Update Incident Due To Concurrency Error");
+                    }
                 }                
                 catch (Exception ex)
                 {
