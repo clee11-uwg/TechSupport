@@ -178,26 +178,5 @@ namespace TechSupport.Controller
             myProductList = ProductDB.GetProductList();
             return myProductList;
         }
-
-        /// <summary>
-        /// Checks if there is a regsitration associated with the customer for product selected
-        /// </summary>
-        /// <param name="incident">Used to retrieve the customer ID and product code</param>
-        /// <returns>Returns the count of registrations between the customer and product selected</returns>
-        public int CheckRegistration(Incident incident)
-        {
-            int registrationCount;
-            SqlConnection connection = IncidentsDBConnection.GetConnection();
-            string registrationCheckStatement =
-                    "SELECT COUNT(*) FROM Registrations " +
-                    "WHERE CustomerID = @CustomerID " +
-                    "AND ProductCode = @ProductCode";
-            SqlCommand registrationCommand = new SqlCommand(registrationCheckStatement, connection);
-            registrationCommand.Parameters.AddWithValue("@CustomerID", incident.CustomerID);
-            registrationCommand.Parameters.AddWithValue("@ProductCode", incident.ProductCode);
-            connection.Open();
-            registrationCount = Convert.ToInt32(registrationCommand.ExecuteScalar());
-            return registrationCount;
-        }
     }
 }

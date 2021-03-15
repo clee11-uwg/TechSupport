@@ -34,7 +34,7 @@ namespace TechSupport.DAL
             try
             {
                 connection.Open();
-                int registrationCount = incidentController.CheckRegistration(incident);
+                int registrationCount = CheckRegistration(incident);
                 if (registrationCount == 0)
                 {
                     throw new Exception("The customer and product selected are not registered together.");
@@ -201,10 +201,12 @@ namespace TechSupport.DAL
             string updateStatement = 
                 "UPDATE Incidents " +
                 "SET DateClosed = @DateClosed " +
-                "WHERE IncidentID = @IncidentID";
+                "WHERE IncidentID = @IncidentID " +
+                "AND DateClosed = @OldDateClosed";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@DateClosed", DateTime.Now);
             updateCommand.Parameters.AddWithValue("@IncidentID", incidentID);
+            updateCommand.Parameters.AddWithValue("@OldDateClosed", DBNull.Value);
 
             try
             {
@@ -273,6 +275,21 @@ namespace TechSupport.DAL
             {
                 connection.Close();
             }
+        }
+        private static int CheckRegistration(Incident incident)
+        {
+            int registrationCount;
+            SqlConnection connection = IncidentsDBConnection.GetConnection();
+            string registrationCheckStatement =
+                    "SELECT COUNT(*) FROM Registrations " +
+                    "WHERE CustomerID = @CustomerID " +
+                    "AND ProductCode = @ProductCode";
+            SqlCommand registrationCommand = new SqlCommand(registrationCheckStatement, connection);
+            registrationCommand.Parameters.AddWithValue("@CustomerID", incident.CustomerID);
+            registrationCommand.Parameters.AddWithValue("@ProductCode", incident.ProductCode);
+            connection.Open();
+            registrationCount = Convert.ToInt32(registrationCommand.ExecuteScalar());
+            return registrationCount;
         }
     }
 }

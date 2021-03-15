@@ -134,6 +134,11 @@ namespace TechSupport.UserControls
                         MessageBox.Show("The incident has been closed");
                         GetIncident(incidentID);
                     }
+                    else
+                    {
+                        MessageBox.Show("Incident appears to have been closed by another user and therefore was unable to close", "Unable to Close Incident Due To Concurrency Error");
+                        GetIncident(incidentID);
+                    }
                 }
             }
             else
@@ -212,7 +217,7 @@ namespace TechSupport.UserControls
                         // Then I'd go back to the program and try to enter in some text within the Text to Add field but it would say Incident Updated.
                         // I'd repeat these steps only this time, I wait a few moments before clicking update button after changing value in the database and it worked as expected.
                         // I am not sure if my testing methods were consistent or not or if there really was some lag time when I was testing.
-                        MessageBox.Show("Parts of the incident have been changed since your last retrieval and therefore is unable to update", "Unable to Update Incident Due To Concurrency Error");
+                        MessageBox.Show("The description been changed since your last retrieval and therefore is unable to update", "Unable to Update Incident Due To Concurrency Error");
                     }
                 }                
                 catch (Exception ex)
