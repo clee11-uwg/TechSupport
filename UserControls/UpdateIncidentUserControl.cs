@@ -128,17 +128,26 @@ namespace TechSupport.UserControls
                 if (result == DialogResult.Yes)
                 {
                     int incidentID = Convert.ToInt32(incidentIDTextBox.Text);
-                    bool isIncidentClosed = this.incidentController.CloseIncident(incidentID);
-                    if (isIncidentClosed)
+                    if (incident.DateClosed.Date == Convert.ToDateTime("1/1/0001"))
                     {
-                        MessageBox.Show("The incident has been closed");
-                        GetIncident(incidentID);
+                        bool isIncidentClosed = this.incidentController.CloseIncident(incidentID);
+                        if (isIncidentClosed)
+                        {
+                            MessageBox.Show("The incident has been closed");
+                            GetIncident(incidentID);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incident appears to have been closed by another user and therefore was unable to close", "Unable to Close Incident Due To Concurrency Error");
+                            GetIncident(incidentID);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Incident appears to have been closed by another user and therefore was unable to close", "Unable to Close Incident Due To Concurrency Error");
+                        MessageBox.Show("Incident has already been closed", "Unable to Close Incident Due To Concurrency Error");
                         GetIncident(incidentID);
                     }
+
                 }
             }
             else

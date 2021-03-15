@@ -201,12 +201,10 @@ namespace TechSupport.DAL
             string updateStatement = 
                 "UPDATE Incidents " +
                 "SET DateClosed = @DateClosed " +
-                "WHERE IncidentID = @IncidentID " +
-                "AND DateClosed = @OldDateClosed";
+                "WHERE IncidentID = @IncidentID ";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@DateClosed", DateTime.Now);
             updateCommand.Parameters.AddWithValue("@IncidentID", incidentID);
-            updateCommand.Parameters.AddWithValue("@OldDateClosed", DBNull.Value);
 
             try
             {
