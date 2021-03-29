@@ -491,6 +491,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>OpenIncidentDataSet</DataSetName>
+        <Top>0.39583in</Top>
         <Height>0.5in</Height>
         <Width>7.5in</Width>
         <Style>
@@ -499,6 +500,40 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Open Incidents Assigned to Technicians</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox32</rd:DefaultName>
+        <Left>1.45708in</Left>
+        <Height>0.25in</Height>
+        <Width>5.03125in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>0.89583in</Height>
     <Style />
