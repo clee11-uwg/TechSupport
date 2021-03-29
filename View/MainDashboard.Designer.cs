@@ -191,10 +191,10 @@
             // 
             // openIncidentsReportUserControl1
             // 
-            this.openIncidentsReportUserControl1.Location = new System.Drawing.Point(70, 46);
+            this.openIncidentsReportUserControl1.Location = new System.Drawing.Point(9, 9);
             this.openIncidentsReportUserControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.openIncidentsReportUserControl1.Name = "openIncidentsReportUserControl1";
-            this.openIncidentsReportUserControl1.Size = new System.Drawing.Size(742, 325);
+            this.openIncidentsReportUserControl1.Size = new System.Drawing.Size(896, 754);
             this.openIncidentsReportUserControl1.TabIndex = 0;
             // 
             // MainDashboard
