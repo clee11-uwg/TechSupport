@@ -15,6 +15,8 @@ namespace TechSupport.UserControls
         public OpenIncidentsReportUserControl()
         {
             InitializeComponent();
+            this.openIncidentsTableAdapter1.Fill(this.techSupportDataSet.OpenIncidents);
+            this.reportViewer1.RefreshReport();
         }
     }
 }
