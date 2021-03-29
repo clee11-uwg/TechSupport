@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="TechSupportConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Products.Name AS 'Product Name', Incidents.Title, Customers.Name AS 'Customer Name', Incidents.DateOpened, Technicians.Name AS 'Technician Name'
+                    <CommandText>SELECT Products.Name, Incidents.Title, Customers.Name, Incidents.DateOpened, Technicians.Name
 FROM Incidents JOIN Customers ON
 Incidents.CustomerID = Customers.CustomerID
 JOIN Products ON
@@ -29,9 +29,9 @@ ORDER BY Products.Name, Incidents.Title, Customers.Name</CommandText>
             <Mappings>
               <Mapping SourceColumn="DateOpened" DataSetColumn="DateOpened" />
               <Mapping SourceColumn="Title" DataSetColumn="Title" />
-              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
-              <Mapping SourceColumn="Customer Name" DataSetColumn="Customer Name" />
-              <Mapping SourceColumn="Technician Name" DataSetColumn="Technician Name" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Name1" DataSetColumn="Name1" />
+              <Mapping SourceColumn="Name2" DataSetColumn="Name2" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -54,21 +54,21 @@ ORDER BY Products.Name, Incidents.Title, Customers.Name</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Customer_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer Name">
+              <xs:element name="Name1" msprop:Generator_ColumnVarNameInTable="columnName1" msprop:Generator_ColumnPropNameInRow="Name1" msprop:Generator_ColumnPropNameInTable="Name1Column" msprop:Generator_UserColumnName="Name1">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Technician_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnTechnician_Name" msprop:Generator_ColumnPropNameInRow="Technician_Name" msprop:Generator_ColumnPropNameInTable="Technician_NameColumn" msprop:Generator_UserColumnName="Technician Name">
+              <xs:element name="Name2" msprop:Generator_ColumnVarNameInTable="columnName2" msprop:Generator_ColumnPropNameInRow="Name2" msprop:Generator_ColumnPropNameInTable="Name2Column" msprop:Generator_UserColumnName="Name2">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

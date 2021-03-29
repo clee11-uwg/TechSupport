@@ -156,7 +156,6 @@
     <Compile Include="View\SearchIncidentDialog.Designer.cs">
       <DependentUpon>SearchIncidentDialog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="OpenIncidentReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
