@@ -79,6 +79,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TechSupportDataSet.cs">
+      <DependentUpon>TechSupportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TechSupportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
