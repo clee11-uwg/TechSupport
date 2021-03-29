@@ -40,6 +40,7 @@
             this.lnkLblLogout = new System.Windows.Forms.LinkLabel();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.reportTabPage = new System.Windows.Forms.TabPage();
             this.dashboardTabControl.SuspendLayout();
             this.displayOpenIncidentsTabPage.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
@@ -53,6 +54,7 @@
             this.dashboardTabControl.Controls.Add(this.addIncidentTabPage);
             this.dashboardTabControl.Controls.Add(this.updateIncidentTabPage);
             this.dashboardTabControl.Controls.Add(this.viewIncidentByTechTabPage);
+            this.dashboardTabControl.Controls.Add(this.reportTabPage);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dashboardTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 103);
@@ -159,6 +161,16 @@
             this.usernameLabel.Size = new System.Drawing.Size(0, 22);
             this.usernameLabel.TabIndex = 3;
             // 
+            // reportTabPage
+            // 
+            this.reportTabPage.Location = new System.Drawing.Point(4, 34);
+            this.reportTabPage.Name = "reportTabPage";
+            this.reportTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.reportTabPage.Size = new System.Drawing.Size(916, 774);
+            this.reportTabPage.TabIndex = 6;
+            this.reportTabPage.Text = "Report";
+            this.reportTabPage.UseVisualStyleBackColor = true;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.TabPage viewIncidentByTechTabPage;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private UserControls.ViewIncidentsByTechUserControl viewIncidentsByTechUserControl1;
+        private System.Windows.Forms.TabPage reportTabPage;
     }
 }
