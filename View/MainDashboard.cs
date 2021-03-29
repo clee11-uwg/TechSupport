@@ -36,9 +36,9 @@ namespace TechSupport.View
             {
                 this.updateIncidentUserControl1.ResetTechComboBox();
             }
-            if (dashboardTabControl.SelectedTab.Text == "View Incidents by Technician")
+            if (dashboardTabControl.SelectedTab.Text == "Report")
             {
-                //this.viewIncidentsByTechUserControl1.ResetTechnician();
+                this.openIncidentsReportUserControl1.RefreshReport();
             }
         }
 
