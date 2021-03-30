@@ -158,12 +158,9 @@ namespace TechSupport.UserControls
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (textToAddTextBox.Text.Trim() == "")
+            if (incident.Description.Length > 185 && textToAddTextBox.Text.Trim() != "")
             {
-                if (incident.Description.Length < 185)
-                    MessageBox.Show("You must add text to the Text To Add text box", "Change Required");
-                else
-                    MessageBox.Show("Anything added to the Text To Add text box will result in the description field being over 200 characters long.", "Unable to Add Text");
+                MessageBox.Show("Anything added to the Text To Add text box will result in the description field being over 200 characters long.", "Unable to Add Text");
             }
             else
             {
@@ -186,14 +183,14 @@ namespace TechSupport.UserControls
                 newIncident.DateOpened = incident.DateOpened;
                 try
                 {
-                    if (incident.Description.Length >= 200)
+                    if (incident.Description.Length >= 200 && textToAddTextBox.Text.Trim() != "")
                     {
                         throw new Exception("Description already contains 200 characters. No more can be added");
                     }
                     else
                     {
                         string newDescription = descriptionTextBox.Text + Environment.NewLine + Environment.NewLine + "<" + DateTime.Now.ToString("MM/dd/yyyy") + ">" + "\t " + textToAddTextBox.Text.Trim();
-                        if (newDescription.Length >= 200)
+                        if (newDescription.Length >= 200 && textToAddTextBox.Text.Trim() != "")
                         {
                             textToAddTextBox.Text = "";
                             throw new Exception("The value entered into the Text To Add field put the description field over 200 characters and therefore was not added");                            
@@ -220,12 +217,6 @@ namespace TechSupport.UserControls
                     }
                     else
                     {
-                        // It seems like it takes a min for the program to realize that something has changed. 
-                        // When testing, I would get a certain ID, add some text to the Text to Add field, click update and everything would be fine.
-                        // Then I would go into the database and updated the description for this incident back to its original value.
-                        // Then I'd go back to the program and try to enter in some text within the Text to Add field but it would say Incident Updated.
-                        // I'd repeat these steps only this time, I wait a few moments before clicking update button after changing value in the database and it worked as expected.
-                        // I am not sure if my testing methods were consistent or not or if there really was some lag time when I was testing.
                         MessageBox.Show("The description been changed since your last retrieval and therefore is unable to update", "Unable to Update Incident Due To Concurrency Error");
                     }
                 }                
