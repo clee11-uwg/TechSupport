@@ -56,7 +56,10 @@ namespace TechSupport.DAL
         public static List<Technician> GetTechniciansWithIncidents()
         {
             List<Technician> techList = new List<Technician>();
-            string selectStatement = "SELECT * FROM Technicians WHERE techID IN (SELECT techID FROM incidents); ";
+            string selectStatement = "SELECT DISTINCT t.TechID, t.Name, t.Email, t.Phone " +
+                                        "FROM Technicians t " +
+                                        "INNER JOIN Incidents i ON " +
+                                        "t.TechID = i.TechID; ";
 
             SqlConnection connection = IncidentsDBConnection.GetConnection();
 
