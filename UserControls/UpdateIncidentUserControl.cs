@@ -191,14 +191,19 @@ namespace TechSupport.UserControls
                     {
                         string newDescription = descriptionTextBox.Text + Environment.NewLine + Environment.NewLine + "<" + DateTime.Now.ToString("MM/dd/yyyy") + ">" + "\t " + textToAddTextBox.Text.Trim();
                         if (newDescription.Length >= 200 && textToAddTextBox.Text.Trim() != "")
-                        {
-                            textToAddTextBox.Text = "";
-                            throw new Exception("The value entered into the Text To Add field put the description field over 200 characters and therefore was not added");                            
+                        {                            
+                            DialogResult result = MessageBox.Show("The value entered into the Text To Add field put the description field over 200 characters. Would you like to truncate the new description to be 200 characters?", "Truncate New Description?", MessageBoxButtons.YesNo); 
+                            if (result == DialogResult.Yes)
+                            {
+                                textToAddTextBox.Text = "";
+                                newDescription = Truncate(newDescription, 200);
+                            }
+                            else
+                            {
+                                return;
+                            }
                         }
-                        else
-                        {
-                            newIncident.Description = newDescription;
-                        }
+                        newIncident.Description = newDescription;
                     }                
                     if (incident.TechID == newIncident.TechID || newIncident.TechID == null)
                     {
@@ -225,6 +230,15 @@ namespace TechSupport.UserControls
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
             }
+        }
+
+        private string Truncate(string source, int length)
+        {
+            if (source.Length > length)
+            {
+                source = source.Substring(0, length);
+            }
+            return source;
         }
     }
 }
